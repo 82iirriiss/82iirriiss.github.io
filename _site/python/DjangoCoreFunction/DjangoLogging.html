@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="로그 남기기 파이썬 로깅 모듈 4가지 로거 핸들러 필터 포맷터 로깅 관련 설정 파일 장고 디폴트 로그 설정 : [장고 설치 홈]/site-package/utils/log.py 사용자 로그 설정 : settings.py의 LOGGING_CONFIG, LOGGING ..."> <meta name="revised" content="bfd381b0a7beaeded1e971b5847660fb5736053b"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>로그 남기기 · jekyll-rtd-theme</title> <meta name="twitter:title" content="로그 남기기 · jekyll-rtd-theme"> <meta name="twitter:description" content="로그 남기기 파이썬 로깅 모듈 4가지 로거 핸들러 필터 포맷터 로깅 관련 설정 파일 장고 디폴트 로그 설정 : [장고 설치 홈]/site-package/utils/log.py 사용자 로그 설정 : settings.py의 LOGGING_CONFIG, LOGGING ..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/python/DjangoCoreFunction/DjangoLogging.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="로그 남기기 · jekyll-rtd-theme"> <meta property="og:description" content="로그 남기기 파이썬 로깅 모듈 4가지 로거 핸들러 필터 포맷터 로깅 관련 설정 파일 장고 디폴트 로그 설정 : [장고 설치 홈]/site-package/utils/log.py 사용자 로그 설정 : settings.py의 LOGGING_CONFIG, LOGGING ..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/python/DjangoCoreFunction/DjangoLogging.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2020-12-29T23:07:10+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/python/DjangoCoreFunction/DjangoLogging.html" }, "headline": "로그 남기기 · jekyll-rtd-theme", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2020-12-29T23:07:10+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars1.githubusercontent.com/u/59656683?v=4" } }, "description": "로그 남기기 파이썬 로깅 모듈 4가지 로거 핸들러 필터 포맷터 로깅 관련 설정 파일 장고 디폴트 로그 설정 : [장고 설치 홈]/site-package/utils/log.py 사용자 로그 설정 : settings.py의 LOGGING_CONFIG, LOGGING ..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="prev" href="http://localhost:4000/python/DjangoCoreFunction/DjangoViewClass.html">
+<link rel="canonical" href="http://localhost:4000/python/DjangoCoreFunction/DjangoLogging.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "jekyll-rtd-theme", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="Just another documentation theme compatible with GitHub Pages"> <i class="fa fa-home"></i> jekyll-rtd-theme </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 current" data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline current" href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li>
+</ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">jekyll-rtd-theme</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/python/">python</a></li>
+<li class="breadcrumb-item"><a href="/python/DjangoCoreFunction/">DjangoCoreFunction</a></li>
+<li class="breadcrumb-item" aria-current="page">DjangoLogging.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/python/DjangoCoreFunction/DjangoLogging.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="로그-남기기">로그 남기기</h1> <ul> <li>파이썬 로깅 모듈 4가지 <ul> <li>로거</li> <li>핸들러</li> <li>필터</li> <li>포맷터</li> </ul> </li> <li> <font color="red">로깅 관련 설정 파일</font> <ul> <li>장고 디폴트 로그 설정 : [장고 설치 홈]/site-package/utils/log.py</li> <li>사용자 로그 설정 : settings.py의 LOGGING_CONFIG, LOGGING 항목</li> </ul> </li> <li>로깅 주요 컴포넌트 관계</li> </ul> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+    [Logger]------------&gt;[Handler]&lt;--------------[Fomatter]
+             /   |  \
+            /    |___\__&gt;[Handler]&lt;--------------[Fomatter]
+           /          \
+          /            \
+   ---------------------------------
+   | [Filter]--&gt;[Filter]--&gt;[Filter] |    
+   ---------------------------------       
+
+</code></pre>  </div></div> <ul> <li>한개의 Logger에 여러 개의 Handler 지정 가능</li> <li>필터 체인 가능, 필터는 Logger 나 Handler 양쪽에 적용 가능</li> </ul> <h2 id="1-로거">1. 로거</h2> <ul> <li>로거 : 로그 메시지를 처리하기 위해 메시지를 담아두는 저장소</li> <li> <p>로거 레벨</p> <table> <thead> <tr> <th style="text-align: left">로그 레벨</th> <th style="text-align: left">정수값</th> <th style="text-align: left">설명</th> </tr> </thead> <tbody> <tr> <td style="text-align: left">NOTSET</td> <td style="text-align: left">0</td> <td style="text-align: left">로그레벨 최하위 수준<br>별도의 로거 또는 핸들러가 없을 때 디폴트 로그 레벨</td> </tr> <tr> <td style="text-align: left">DEBUG</td> <td style="text-align: left">10</td> <td style="text-align: left">디버그 용도</td> </tr> <tr> <td style="text-align: left">INFO</td> <td style="text-align: left">20</td> <td style="text-align: left">일반적인 정보</td> </tr> <tr> <td style="text-align: left">WARNING</td> <td style="text-align: left">30</td> <td style="text-align: left">덜 중요한 문제점 발생시 문제에 대한 정보</td> </tr> <tr> <td style="text-align: left">ERROR</td> <td style="text-align: left">40</td> <td style="text-align: left">주요 문제점 발생시 문제에 대한 정보</td> </tr> <tr> <td style="text-align: left">CRITICAL</td> <td style="text-align: left">50</td> <td style="text-align: left">치명적인 문제점 발생시 문제에 대한 정보</td> </tr> </tbody> </table> </li> <li>로그 레코드 : 로거에 저장되는 메시지, 레코드도 로그레벨을 가짐</li> <li>‘로그 레코드의 로그 레벨 &gt;= 로거의 로그 레벨' 일 때, 메시지 처리가 진행되며 그 반대는 무시됨</li> </ul> <h2 id="2-핸들러">2. 핸들러</h2> <ul> <li>핸들러 <ul> <li>메시지에 무슨 작업을 할지 결정하는 엔진</li> <li>메시지를 화면이나 콘솔, 파일, 네트워크 소켓등 어디에 기록할 것인지 같은 로그 동작을 정의함</li> <li>핸들러도 로그 레벨을 가지고 있음</li> <li>로그 레코드의 로그레벨 &gt;= 로그 핸들러의 로그레벨 일 때, 메시지 처리가 진행되며 그 반대는 무시됨</li> <li>각 핸들러는 서로 다른 로그레벨을 가질 수 있음 <ul> <li>(예시) : ERROR 또는 CRITICAL 메시지는 표준 출력하는 핸들러, 모든 메시지를 파일에 기록하는 또 다른 핸들러</li> </ul> </li> </ul> </li> </ul> <h2 id="3-필터">3. 필터</h2> <ul> <li>로그레코드가 로거에서 핸들러로 넘겨 질때 필터를 이용해 레코드에 추가적인 제어를 할 수 있음 <ul> <li>예를 들어,</li> <li>필터를 추가하여, 특정 소스로 부터 오는 메시지만 핸들러로 넘기거나, _ 어떤 조건을 추가하여 조건에 맞으면, ERROR 로그를 WARNNING 로그로 낮추는 등</li> </ul> </li> </ul> <h2 id="4-포맷터">4. 포맷터</h2> <ul> <li>출력하는 텍스트의 형식</li> </ul> <h2 id="5-로그의-설정">5. 로그의 설정</h2> <h3 id="1-별도의-설정을-하지-않았을-때-django의-기본설정을-따름">(1) 별도의 설정을 하지 않았을 때, django의 기본설정을 따름</h3> <ul> <li>[django_home]/site-packages/utils/log.py</li> </ul> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="n">DEFAULT_LOGGING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'version'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># dicConfig 버전1 형식
+</span>    <span class="s">'disable_existing_loggers'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="c1"># 기존의 로거들을 비활성화 할것인가?, jango는 False를 권장
+</span>    <span class="s">'filters'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'require_debug_false'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 디버그가 False인 경우만 핸들러를 동작함
+</span>            <span class="s">'()'</span><span class="p">:</span> <span class="s">'django.utils.log.RequireDebugFalse'</span><span class="p">,</span> <span class="c1"># ()는, 필터 객체 생성 클래스로 장고에서 생성한 클래스
+</span>        <span class="p">},</span>
+        <span class="s">'require_debug_true'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 디버그가 True인 경우만 핸들러를 동작함
+</span>            <span class="s">'()'</span><span class="p">:</span> <span class="s">'django.utils.log.RequireDebugTrue'</span><span class="p">,</span> <span class="c1"># ()는 필터 객체 생성 클래스
+</span>        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s">'formatters'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'django.server'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 로그 생성시간과 메시지만을 출력
+</span>            <span class="s">'()'</span><span class="p">:</span> <span class="s">'django.utils.log.ServerFormatter'</span><span class="p">,</span>
+            <span class="s">'format'</span><span class="p">:</span> <span class="s">'[{server_time}] {message}'</span><span class="p">,</span>
+            <span class="s">'style'</span><span class="p">:</span> <span class="s">'{'</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">'handlers'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'console'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># INFO 이상의 메시지를 표준에러로 출력해주는 StreamHandler 클래스를 사용함.
+</span>            <span class="s">'level'</span><span class="p">:</span> <span class="s">'INFO'</span><span class="p">,</span>
+            <span class="s">'filters'</span><span class="p">:</span> <span class="p">[</span><span class="s">'require_debug_true'</span><span class="p">],</span>
+            <span class="s">'class'</span><span class="p">:</span> <span class="s">'logging.StreamHandler'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">'django.server'</span><span class="p">:</span> <span class="p">{</span> 
+            <span class="s">'level'</span><span class="p">:</span> <span class="s">'INFO'</span><span class="p">,</span>
+            <span class="s">'class'</span><span class="p">:</span> <span class="s">'logging.StreamHandler'</span><span class="p">,</span>
+            <span class="s">'formatter'</span><span class="p">:</span> <span class="s">'django.server'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">'mail_admins'</span><span class="p">:</span> <span class="p">{</span><span class="c1"># ERROR 그 이상의 메시지를 관리자 메일로 보내주는 AdminEmailHandler 클래스를 생성
+</span>            <span class="s">'level'</span><span class="p">:</span> <span class="s">'ERROR'</span><span class="p">,</span>
+            <span class="s">'filters'</span><span class="p">:</span> <span class="p">[</span><span class="s">'require_debug_false'</span><span class="p">],</span>
+            <span class="s">'class'</span><span class="p">:</span> <span class="s">'django.utils.log.AdminEmailHandler'</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s">'loggers'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'django'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># django.* 계층, 즉  최상위 로거
+</span>            <span class="s">'handlers'</span><span class="p">:</span> <span class="p">[</span><span class="s">'console'</span><span class="p">,</span> <span class="s">'mail_admins'</span><span class="p">],</span>
+            <span class="s">'level'</span><span class="p">:</span> <span class="s">'INFO'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">'django.server'</span><span class="p">:</span> <span class="p">{</span> <span class="c1"># 상위로거로 메시지를 전파하지 않음. 개발용 웹서버인 runserver에서 사용하는 로거. 5XX는 Error로, 4XX는 WARNNING 으로 메시지 출력
+</span>            <span class="s">'handlers'</span><span class="p">:</span> <span class="p">[</span><span class="s">'django.server'</span><span class="p">],</span>
+            <span class="s">'level'</span><span class="p">:</span> <span class="s">'INFO'</span><span class="p">,</span>
+            <span class="s">'propagate'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>  </div></div> <h3 id="2-사용자-정의-로거">(2) 사용자 정의 로거</h3> <ul> <li>mysite/settings.py</li> <li>LOGGING 항목에 새로운 로거를 추가하거나, django 디폴트 로거들을 오버라이딩하는 것도 가능</li> </ul> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="n">LOGGING_CONFIG</span> <span class="o">=</span> <span class="s">'logging.config.dictConfig'</span>    <span class="c1"># 설정하지 않아도 디폴트가 dictConfig이므로 생략 가능, 로깅 설정에 사용하는 함수를 지정
+</span><span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># 개발자가 로깅을 설정할때 LOGGING 항목을 사용
+</span>    <span class="s">'version'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s">'disable_existing_loggers'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+    <span class="s">'formatters'</span><span class="p">:{</span>
+        <span class="s">'verbose'</span><span class="p">:{</span> <span class="c1"># verbose 포맷터 정의
+</span>            <span class="s">'format'</span><span class="p">:</span><span class="s">"[%(asctime)s] %(levelname)s %[%(name)s:%(lineno)s] %(message)s"</span><span class="p">,</span> <span class="c1"># [로그메시지 기록시간], 로그레벨 이름, [로거이름:라인번호],로그메시지 순으로 출력 , 
+</span>            <span class="s">'datefmt'</span><span class="p">:</span><span class="s">"%d/%b/%Y %H:%M:%S"</span> <span class="c1"># 시간의 포맷은 날짜/월축약형/연도 시(24시기준)/분/초 형식으로 출력
+</span>        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s">'handlers'</span><span class="p">:{</span>
+        <span class="s">'file'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'level'</span><span class="p">:</span><span class="s">'DEBUG'</span><span class="p">,</span>
+            <span class="s">'class'</span><span class="p">:</span><span class="s">'logging.FileHandler'</span><span class="p">,</span>
+            <span class="s">'filename'</span><span class="p">:</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span><span class="s">'logs'</span><span class="p">,</span><span class="s">'mysite.log'</span><span class="p">),</span> <span class="c1"># root디렉토리/logs/mysite.log 파일로 출력
+</span>            <span class="s">'formatter'</span><span class="p">:</span><span class="s">'verbose'</span>
+        <span class="p">},</span>
+        <span class="s">'loggers'</span><span class="p">:{</span>
+            <span class="s">'django'</span><span class="p">:{</span> <span class="c1"># 디폴트로 설정되어 있는 로거인데, 오버라이딩 하고 있음
+</span>                <span class="s">'handlers'</span><span class="p">:[</span><span class="s">'file'</span><span class="p">],</span>
+                <span class="s">'level'</span><span class="p">:</span> <span class="s">'DEBUG'</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s">'mysite'</span><span class="p">:{</span> 
+                <span class="s">'handlers'</span><span class="p">:[</span><span class="s">'file'</span><span class="p">],</span>
+                <span class="s">'level'</span><span class="p">:</span><span class="s">'DEBUG'</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>  </div></div> <h3 id="3-django-디폴트-로깅설정-무시하는-설정">3. django 디폴트 로깅설정 무시하는 설정</h3> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># settings.py
+</span>
+<span class="n">LOGGING_CONFIG</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># 내가 원하는 로깅 컴포넌트를 설정함
+</span><span class="p">}</span>
+
+<span class="kn">import</span> <span class="nn">logging.config</span>
+<span class="n">logging</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">LOGGING</span><span class="p">)</span>
+</code></pre>  </div></div> <h3 id="4-설정한-로거를-소스에서-사용하는-방법">4. 설정한 로거를 소스에서 사용하는 방법</h3> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># some_app/views.py
+</span><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'mylogger'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="c1"># 로직
+</span>    <span class="k">if</span> <span class="n">bad_mojo</span><span class="p">:</span>
+        <span class="c1"># ERROR 레벨의 로그 레코드 생성함
+</span>        <span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="s">'Something went wrong!'</span><span class="p">)</span>
+</code></pre>  </div></div> <ul> <li>logging.getLogger() : 관행적으로 <strong>__name__</strong> (해당 파일 이름) 구문을 사용, ‘' 로 설정하면 최상위 루트 로거가 됨 <ul> <li>만일 ch3/polls/views 파일이라면, <strong>__name__</strong>은 polls.views 가 됨</li> <li>로깅 호출은, 부모에게서 전파되므로 최상위 루트 로거에서 핸들러 하나만 만들어도 하위 로거의 모든 로깅 호출함</li> <li>예시 : project 이름공간에 정의된 로그 핸들러는 project.interesting 로거 및 project.interesting.stuff 로거가 보내주는 모든 로그 메시지를 잡음 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>  <span class="c1"># 로거 이름으로 계층화
+</span>  <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">'project.interesting.stuff'</span><span class="p">)</span>
+</code></pre>  </div> </div> </li> </ul> </li> <li>로깅 메소드 : 로거 객체는 로그 레벨별로 로그 호출 메소드를 갖고 있음 <ul> <li>logger.debug()</li> <li>logger.info()</li> <li>logger.warning()</li> <li>logger.error()</li> <li> <p>logger.critical()</p> </li> <li>logger.log()</li> <li>logger.exception() : 익셉션 스택 트레이스 정보를 포함하는 ERROR 레벨의 로그 메시지 생성</li> </ul> </li> </ul> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/python/DjangoCoreFunction/DjangoViewClass.html" class="btn" title="클래스 형 뷰" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"></div> </div>
+<hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/bfd381b0a7beaeded1e971b5847660fb5736053b" title="bfd381b0a7beaeded1e971b5847660fb5736053b" rel="noreferrer" target="_blank">bfd381b</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> jekyll-rtd-theme </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 3558 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="jekyll-rtd-theme">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="템플릿 시스템 템플릿 코드 : 렌더링 하기 전의 템플릿 파일 템플릿 파일 : 렌더링을 마친 후 html 등의 문서파일로 해석된 파일 1. 템플릿 변수 변수의 표현식 {{variable}} {{variable.prop}} 정의되어 있지 않은 변수일 경우, ‘'..."> <meta name="revised" content="bfd381b0a7beaeded1e971b5847660fb5736053b"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>템플릿 시스템 · jekyll-rtd-theme</title> <meta name="twitter:title" content="템플릿 시스템 · jekyll-rtd-theme"> <meta name="twitter:description" content="템플릿 시스템 템플릿 코드 : 렌더링 하기 전의 템플릿 파일 템플릿 파일 : 렌더링을 마친 후 html 등의 문서파일로 해석된 파일 1. 템플릿 변수 변수의 표현식 {{variable}} {{variable.prop}} 정의되어 있지 않은 변수일 경우, ‘'..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/python/DjangoCoreFunction/templateSystem.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="템플릿 시스템 · jekyll-rtd-theme"> <meta property="og:description" content="템플릿 시스템 템플릿 코드 : 렌더링 하기 전의 템플릿 파일 템플릿 파일 : 렌더링을 마친 후 html 등의 문서파일로 해석된 파일 1. 템플릿 변수 변수의 표현식 {{variable}} {{variable.prop}} 정의되어 있지 않은 변수일 경우, ‘'..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/python/DjangoCoreFunction/templateSystem.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2020-12-29T23:07:10+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/python/DjangoCoreFunction/templateSystem.html" }, "headline": "템플릿 시스템 · jekyll-rtd-theme", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2020-12-29T23:07:10+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars1.githubusercontent.com/u/59656683?v=4" } }, "description": "템플릿 시스템 템플릿 코드 : 렌더링 하기 전의 템플릿 파일 템플릿 파일 : 렌더링을 마친 후 html 등의 문서파일로 해석된 파일 1. 템플릿 변수 변수의 표현식 {{variable}} {{variable.prop}} 정의되어 있지 않은 변수일 경우, ‘&#39..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="prev" href="http://localhost:4000/python/DjangoCoreFunction/dataAlterbyPythonShell.html">
+<link rel="next" href="http://localhost:4000/python/DjangoCoreFunction/DjangoForm.html">
+<link rel="canonical" href="http://localhost:4000/python/DjangoCoreFunction/templateSystem.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "jekyll-rtd-theme", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="Just another documentation theme compatible with GitHub Pages"> <i class="fa fa-home"></i> jekyll-rtd-theme </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 current" data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline current" href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li>
+</ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">jekyll-rtd-theme</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/python/">python</a></li>
+<li class="breadcrumb-item"><a href="/python/DjangoCoreFunction/">DjangoCoreFunction</a></li>
+<li class="breadcrumb-item" aria-current="page">templateSystem.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/python/DjangoCoreFunction/templateSystem.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="템플릿-시스템">템플릿 시스템</h1> <blockquote> <p>템플릿 코드 : 렌더링 하기 전의 템플릿 파일 <br> 템플릿 파일 : 렌더링을 마친 후 html 등의 문서파일로 해석된 파일</p> </blockquote> <h2 id="1-템플릿-변수">1. 템플릿 변수</h2> <ol> <li>변수의 표현식</li> </ol> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{{variable}}
+{{variable.prop}}
+
+</code></pre>  </div></div> <ol> <li> <p>정의되어 있지 않은 변수일 경우, ‘' 빈 문자열로 채워줌. 이 값을 변경하려면 settings.py 파일의 다음과 같은 속성을 지정해 주면 됨</p> <p><code class="language-plaintext highlighter-rouge notranslate">TEMPLATE_STRING_IF_INVALID</code></p> </li> </ol> <h2 id="2-템플릿-필터">2. 템플릿 필터</h2> <blockquote> <p>필터 참고하기 : <a href="https://docs.djangoproject.com/en/2.1/ref/templates/builtins">https://docs.djangoproject.com/en/2.1/ref/templates/builtins</a></p> </blockquote> <ol> <li> <p>파이프(|) 문자 사용</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{ name:lower}}</code> : name 변수값을 소문자로 변경해 주는 필터</p> </li> <li> <p>필터를 체인으로 연결 할 수 있음</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{text|escape|linebreaks}}</code> : text 문자열의 특수문자를 escape 해주고, 그 결과를 &lt;p&gt; 태그로 감싸줌</p> </li> <li> <p>몇가지 필터는 인자를 가진 경우도 있음</p> <ul> <li> <p>bio 변수값 중 앞에 30개의 단어만 보여주고, 줄바꿈 문자는 모두 없애는 필터</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{bio|truncatewords:30}}</code></p> </li> <li> <p>인자에 빈칸이 있는 경우 따옴표로 감싸줌</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{list|join:" // "}}</code> : list 요소를 ‘ // ‘로 연결해 줌. list가 [‘a','b','c'] 라면 ‘a // b // c' 가 됨</p> </li> <li> <p>value 값이 False 이거나 없는 경우, "nothing"으로 보여줌</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{value|default:"nothing"}}</code></p> </li> <li> <p>value 변수값의 길이를 반환</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{value|length}}</code> : value 변수는 문자열이나 리스트도 가능함</p> </li> <li> <p>value 변수값에서 HTML 태그를 모두 없애 줌</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{value|striptags}}</code></p> </li> <li> <p>value 값이 복수이면 복수 접미사를 붙여줌</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{value|pluralize}}</code> : value가 복수이면 ‘s'를 붙여줌 <br> <code class="language-plaintext highlighter-rouge notranslate">{{value|pluralize:'es'}}</code>: value가 복수이면 ‘es'를 붙여줌 <br> <code class="language-plaintext highlighter-rouge notranslate">{{value|pluralize:'ies'}}</code> : value가 복수이면 ‘ies'를 붙여줌</p> </li> <li> <p>value에 2를 더하기를 해줌</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{value|add:'2'}}</code></p> <ul> <li> <p>예시</p> <p><code class="language-plaintext highlighter-rouge notranslate">{{'python'|add:'django'}}</code> =&gt; ‘pythondjango' <br> <code class="language-plaintext highlighter-rouge notranslate">{{[1,2,3]|add:[4,5,6]}}</code> =&gt; [1,2,3,4,5,6] <br> <code class="language-plaintext highlighter-rouge notranslate">{{'5'|add:'10'}}</code> =&gt; 15</p> </li> </ul> </li> </ul> </li> </ol> <h2 id="3-템플릿-태그">3. 템플릿 태그</h2> <h3 id="1--for--태그">(1) {% for %} 태그</h3> <ul> <li>예시</li> </ul> <div class="language-html highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% for athlete in athlete_list %}
+    <span class="nt">&lt;li&gt;</span>{{ athlete.name }}<span class="nt">&lt;/li&gt;</span>
+{% endfor %}
+
+</code></pre>  </div></div> <ul> <li>loop 시 사용할 수 있는 여러가지 변수</li> </ul> <table> <thead> <tr> <th>변수명</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>forloop.counter</td> <td>1부터 카운트</td> </tr> <tr> <td>forloop.counter0</td> <td>0부터 카운트</td> </tr> <tr> <td>forloop.revcounter</td> <td>역순으로 1부터 카운트</td> </tr> <tr> <td>forloop.revcounter0</td> <td>역순으로 0부터 카운트</td> </tr> <tr> <td>forloop.first</td> <td>루프 첫번째 실행이면 True</td> </tr> <tr> <td>forloop.last</td> <td>루프 마지막 실행이면 True</td> </tr> <tr> <td>forloop.parentloop</td> <td>중첩 루프에서 바로 상위의 루프를 의미함</td> </tr> </tbody> </table> <h3 id="2--if--태그">(2) {% if %} 태그</h3> <ul> <li>예시</li> </ul> <div class="language-html highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% if athlete_list %}
+    Number of athletes: {{ athlete_list|length }}
+{% elif athlete_in_locker_room_list %}
+    Athletes should be out of the locker room soon!
+{% else %}
+    No athletes.
+{% endif %}
+
+</code></pre>  </div></div> <ul> <li>
+<code class="language-plaintext highlighter-rouge notranslate">{{if athlete_list|length &gt; 1 }}</code> : {% if %} 태그에 필터와 연산자를 사용 할 수 있다.</li> <li>and, or, not, and not, ==, !=, &lt;, &gt;, &lt;=, &gt;=, in, not in : {% if %} 태그에 불린 연산자를 사용 할 수 있다.</li> </ul> <h3 id="3--csrf_token--태그">(3) {% csrf_token %} 태그</h3> <ul> <li>POST 방식의 폼을 사용하는 템플릿 코드에서 csrf_token을 사용 해야 함</li> <li>위치는, &lt;form&gt; 엘리먼트 첫줄에 넣어줌</li> <li>CSRF 토큰값 검증 실행하면,403 에러를 보여줌</li> <li>외부 URL로는 보내지 말것</li> <li>예시</li> </ul> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+ &lt;form action='.' method='post'&gt;{% csrf_token %}
+
+</code></pre>  </div></div> <h3 id="4--url--태그">(4) {% url %} 태그</h3> <blockquote> <p>소스에 url 하드코딩을 방지하기 위해 사용</p> </blockquote> <ul> <li>형식 <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {% url 'namespace:view-name' arg1 arg2 %}
+    
+</code></pre>  </div> </div> <ul> <li>namespace : urls.py 파일의 include()함수 또는 app_name 변수에 정의한 이름공간</li> <li>view-nme : urls.py 파일에서 정의한 URL 패턴이름</li> <li>argN : 뷰 함수에서 사용하는 인자로, PathParameter. 빈칸으로 구분함</li> </ul> </li> <li>예시 <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  &lt;form action="{% url 'polls:vote' question.id  %}" method="post"&gt;
+    
+</code></pre>  </div> </div> </li> </ul> <h3 id="5--with--태그">(5) {% with %} 태그</h3> <blockquote> <p>특정 값을 변수에 저장해 두는 기능</p> </blockquote> <ul> <li>예시 <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {% with total=business.employees.count %}
+      {{ total }} people works at business
+  {% endwith %}
+
+  // 또는
+
+  {% with business.employees.count as total %}
+      {{ total }} people works at business
+  {% endwith %}
+    
+</code></pre>  </div> </div> </li> </ul> <h3 id="6--load--태그">(6) {% load %} 태그</h3> <blockquote> <p>사용자 정의 태그 및 필터를 로딩 <br> 참고 : <a href="https://docs.djangoproject.com/en/2.1/ref/templates/builtins/">https://docs.djangoproject.com/en/2.1/ref/templates/builtins/</a></p> </blockquote> <ul> <li>예시 : somelibrary.py 와 package.otherlibrary.py 에 있는 사용자 정의 태그 및 필터를 로딩 해 줌 <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>  {% load somelibrary package.otherlibrary %}
+</code></pre>  </div> </div> </li> </ul> <h2 id="4-템플릿-주석">4. 템플릿 주석</h2> <ol> <li>한줄 주석 : {# #} <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> {# greeting #}hello 
+ {# {% if foo %}bar{% else %} #}
+</code></pre>  </div> </div> </li> <li>여러줄 주석 : {% comment %} ~ {% endcomment %}</li> </ol> <ul> <li> <p>{% comment %} 태그는 중첩해서 사용할 수 없다.</p> <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {%comment  "Optional note" %}
+  &lt;p&gt;Commented out text here&lt;/p&gt;
+  {% endcomment %}
+    
+</code></pre>  </div> </div> </li> </ul> <h2 id="5-html-이스케이프">5. HTML 이스케이프</h2> <blockquote> <p>django 는 탬플릿으로 변수를 넘겨 줄 때, HTML 태그에 사용되는 몇몇 문자를 자동으로 이스케이프 한다.</p> </blockquote> <ol> <li>자동 이스케이프 하는 문자들 <ul> <li>&lt; : &amp;lt; 으로 변경</li> <li>&gt; : &amp;gt; 으로 변경</li> <li>' : &amp;39; 으로 변경</li> <li>" : &amp;quot;으로 변경</li> <li>&amp; : &amp;amp; 으로 변경</li> </ul> </li> <li> <p>자동 이스케이프를 방지하는 방법 ( HTML 태그를 입력한 그대로 태그로 이용하고 싶을 때)</p> <ul> <li>safe 필터를 사용하는 방법 <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>        
+  # data = "&lt;b&gt;data" 라고 가정할 때,
+  This will not be escaped: {% data:safe %}
+        
+</code></pre>  </div> </div> </li> <li>
+<strong>{% autoescape %}</strong> 태그를 사용하는 방법 , <font color="red">autoescape 태그를 사용하는 것을 권장</font> <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>        
+ {% autoescape off %}
+ Hello {{ name }}
+ {% endautoescape %}
+        
+</code></pre>  </div> </div> </li> </ul> </li> </ol> <h2 id="6-템플릿-상속">6. 템플릿 상속</h2> <blockquote> <p>block 태그 이용</p> </blockquote> <h3 id="예제--부모-템플릿-basehtml">예제 : 부모 템플릿 base.html</h3> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"/&gt;
+    &lt;title&gt;{% block title %}My amazing site{% endblock %}&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="sidebar"&gt;
+        {% block sidebar %}
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/"&gt;HOME&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/blog/"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        {% endblock %}
+    &lt;/div&gt;
+    &lt;div id="content"&gt;
+        {% block content %}{% endblock %}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>  </div></div> <h3 id="예제--자식-템플릿">예제 : 자식 템플릿</h3> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% extends "base.html" %} 
+
+{% block title %}My amazing blog{% endblock %}
+{% block content %}
+{% for entry in blog_entries %}
+    &lt;h2&gt;{{ entry.title }}&lt;/h2&gt;
+    &lt;p&gt;{{ entry.body }}&lt;/p&gt;
+{% endfor %}
+{% endblock %}
+
+</code></pre>  </div></div> <ul> <li>부모 템플릿을 extends 키워드로 상속함</li> <li>부모 템플릿 block 중, title 과 content 만 다시 작성하였으므로, sidebar 는 부모의 코드를 그대로 재사용함</li> </ul> <h3 id="템플릿-상속은-3단계를-권장">템플릿 상속은 3단계를 권장</h3> <ul> <li>1 단계 : 사이트 전체의 룩앤필을 담고 있는 base.html</li> <li>2 단계 : base.html 을 상속받는 하위 섹션별 템플릿, base_news.html, base_sports.html 등..</li> <li>3 단계 : 적절한 2단계 템플릿을 상속받는 개별 페이지</li> </ul> <h3 id="템플릿-상속을-정의할-때-유의사항">템플릿 상속을 정의할 때 유의사항</h3> <ul> <li>extends 태그는 가장 먼저 나와야 함</li> <li>1 단계 부모템플릿에 공통된 부분을 많이 코딩하는게 좋음</li> <li>부모 템플릿의 bock을 그대로 사용하고 싶다면, 자식 템플릿에서 를 사용. 부모 템플릿을 사용하면서 내용을 추가 할 때 사용</li> <li>endblock content 처럼 endblock 뒤에 block 이름을 명시 해 주어도 됨</li> </ul> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html" class="btn" title="장고 파이썬 쉘로 데이터 조작하기" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"><a href="/python/DjangoCoreFunction/DjangoForm.html" class="btn" title="Django 의 폼 처리 기능" accesskey="n" rel="next"> Next <i class="fa fa-arrow-circle-right"></i> </a></div> </div>
+<hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/bfd381b0a7beaeded1e971b5847660fb5736053b" title="bfd381b0a7beaeded1e971b5847660fb5736053b" rel="noreferrer" target="_blank">bfd381b</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> jekyll-rtd-theme </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 3558 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="jekyll-rtd-theme">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>

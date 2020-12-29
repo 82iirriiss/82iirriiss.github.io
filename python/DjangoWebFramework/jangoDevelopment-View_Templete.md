@@ -99,10 +99,34 @@ sort: 5
 
 ### (1) 템플릿파일을 생성할 디렉토리 생성
 
+1. 템플릿 디렉토리 생성
+
 ```
 ~polls>mkdir templates
 # templates안에 또 polls 디렉토리를 생성하여 그 하위에 템플릿 파일을 저장하는 이유는, 이름이 같은 템플릿 파일들의 충돌을 막기 위함
 ~polls>mkdir templates/polls
+```
+2. settings.py 파일 **TEMPLATES** 항목의 **DIRS**에 템플릿 디렉토리 경로 지정
+
+```
+# mysite/settings.py
+(생략)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+(생략)
 ```
 
 ### (2) index.html 템플릿 파일 생성

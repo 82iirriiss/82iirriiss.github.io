@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="1. 새로운 애플리케이션 만들기 ‘books' 어플리케이션을 추가할 것이다. 순서 어플리케이션 설계하기 프로젝트 뼈대 만들기 애플리케이션 - Model 코딩하기 애플리케이션 - URLconf 코딩하기 애플리케이션 - View 코딩하기 애플리케이션 - Tem..."> <meta name="revised" content="bfd381b0a7beaeded1e971b5847660fb5736053b"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>새로운 애플리케이션 만들기 · jekyll-rtd-theme</title> <meta name="twitter:title" content="새로운 애플리케이션 만들기 · jekyll-rtd-theme"> <meta name="twitter:description" content="1. 새로운 애플리케이션 만들기 ‘books' 어플리케이션을 추가할 것이다. 순서 어플리케이션 설계하기 프로젝트 뼈대 만들기 애플리케이션 - Model 코딩하기 애플리케이션 - URLconf 코딩하기 애플리케이션 - View 코딩하기 애플리케이션 - Tem..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/python/extendExampleProject/addNewApplication.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="새로운 애플리케이션 만들기 · jekyll-rtd-theme"> <meta property="og:description" content="1. 새로운 애플리케이션 만들기 ‘books' 어플리케이션을 추가할 것이다. 순서 어플리케이션 설계하기 프로젝트 뼈대 만들기 애플리케이션 - Model 코딩하기 애플리케이션 - URLconf 코딩하기 애플리케이션 - View 코딩하기 애플리케이션 - Tem..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/python/extendExampleProject/addNewApplication.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2020-12-29T23:07:10+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/python/extendExampleProject/addNewApplication.html" }, "headline": "새로운 애플리케이션 만들기 · jekyll-rtd-theme", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2020-12-29T23:07:10+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars1.githubusercontent.com/u/59656683?v=4" } }, "description": "1. 새로운 애플리케이션 만들기 ‘books&#39; 어플리케이션을 추가할 것이다. 순서 어플리케이션 설계하기 프로젝트 뼈대 만들기 애플리케이션 - Model 코딩하기 애플리케이션 - URLconf 코딩하기 애플리케이션 - View 코딩하기 애플리케이션 - Tem..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="canonical" href="http://localhost:4000/python/extendExampleProject/addNewApplication.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "jekyll-rtd-theme", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="Just another documentation theme compatible with GitHub Pages"> <i class="fa fa-home"></i> jekyll-rtd-theme </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 current" data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline current" href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li>
+</ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">jekyll-rtd-theme</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/python/">python</a></li>
+<li class="breadcrumb-item"><a href="/python/extendExampleProject/">extendExampleProject</a></li>
+<li class="breadcrumb-item" aria-current="page">addNewApplication.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/python/extendExampleProject/addNewApplication.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="1-새로운-애플리케이션-만들기">1. 새로운 애플리케이션 만들기</h1> <blockquote> <p>‘books' 어플리케이션을 추가할 것이다.</p> </blockquote> <ul> <li>순서 <ul> <li>어플리케이션 설계하기</li> <li>프로젝트 뼈대 만들기</li> <li>애플리케이션 - Model 코딩하기</li> <li>애플리케이션 - URLconf 코딩하기</li> <li>애플리케이션 - View 코딩하기</li> <li>애플리케이션 - Template 코딩하기</li> </ul> </li> </ul> <h2 id="1-애플리케이션-설계">1. 애플리케이션 설계</h2> <h3 id="1-ui-설계">(1) UI 설계</h3> <table> <thead> <tr> <th>index.html</th> <th>book_list.html</th> <th>book_detail.html</th> </tr> </thead> <tbody> <tr> <td>. Book<br>. Author<br>. Publisher</td> <td>. Python Web Programming<br>. Design Pattern<br>. Effective Java</td> <td>. Author:S.H.Kim<br>. Publisher:HanBit<br>. Publication date:March 1, 2015</td> </tr> </tbody> </table> <h3 id="2-model-설계">(2) Model 설계</h3> <h4 id="2-1-book">(2)-1. Book</h4> <table> <thead> <tr> <th>컬럼명</th> <th>타입</th> <th>제약조건</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>id</td> <td>integer</td> <td>NotNull, Pk, AutoIncrement</td> <td>Pk</td> </tr> <tr> <td>title</td> <td>varchar(100)</td> <td>NotNull</td> <td>책제목</td> </tr> <tr> <td>authors</td> <td>integer</td> <td>NotNull, MTM(Author.id), index</td> <td>Many-To-Many</td> </tr> <tr> <td>publisher</td> <td>integer</td> <td>NotNull, FK(publisher.id), index</td> <td>Fk</td> </tr> <tr> <td>publication_date</td> <td>date</td> <td>NotNull</td> <td>책 출판일</td> </tr> </tbody> </table> <h4 id="2-2-author">(2)-2. Author</h4> <table> <thead> <tr> <th>컬럼명</th> <th>타입</th> <th>제약조건</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>id</td> <td>integer</td> <td>NotNull, Pk, AutoIncrement</td> <td>Pk</td> </tr> <tr> <td>salutation</td> <td>varchar(100)</td> <td>NotNull</td> <td>저자 인사말</td> </tr> <tr> <td>name</td> <td>varchar(50)</td> <td>NotNull</td> <td>저자 성명</td> </tr> <tr> <td>email</td> <td>varchar(50)</td> <td>NotNull</td> <td>저자 이메일</td> </tr> </tbody> </table> <h4 id="2-3-publisher">(2)-3. Publisher</h4> <table> <thead> <tr> <th>컬럼명</th> <th>타입</th> <th>제약조건</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>id</td> <td>integer</td> <td>NotNull, Pk, AutoIncrement</td> <td>Pk</td> </tr> <tr> <td>name</td> <td>varchar(50)</td> <td>NotNull</td> <td>출판사 이름</td> </tr> <tr> <td>address</td> <td>varchar(200)</td> <td>NotNull</td> <td>출판사 주소</td> </tr> <tr> <td>website</td> <td>url</td> <td>NotNull</td> <td>출판사 웹사이트</td> </tr> </tbody> </table> <h3 id="3-뷰-흐름-설계">(3) 뷰 흐름 설계</h3> <table> <thead> <tr> <th>URL</th> <th>View</th> <th>Template</th> </tr> </thead> <tbody> <tr> <td>/books/</td> <td>BooksModelView.as_view()</td> <td>index.html</td> </tr> <tr> <td>/books/book/</td> <td>BookList.as_view()</td> <td>book_list.html</td> </tr> <tr> <td>/books/author/</td> <td>AuthorList.as_view()</td> <td>author_list.html</td> </tr> <tr> <td>/books/publisher/</td> <td>PublisherList.as_view()</td> <td>publisher_list.html</td> </tr> <tr> <td>/books/book/3/</td> <td>BookDetail.as_view()</td> <td>book_detail.html</td> </tr> <tr> <td>/books/author/3/</td> <td>AuthorDetail.as_view()</td> <td>author_detail.html</td> </tr> <tr> <td>/books/publisher/3/</td> <td>PublisherDetail.as_view()</td> <td>publisher_detail.html</td> </tr> </tbody> </table> <h2 id="2-애플리케이션---뼈대-만들기">2. 애플리케이션 - 뼈대 만들기</h2> <ol> <li> <div class="language-console highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="gp">ch3&gt;</span>python manage.py startapp books   
+</code></pre>  </div> </div> </li> <li> <p>settings.py 파일의 INSTALLED_APPS 항목에 books 어플리케이션 설정 클래스 등록</p> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="c1"># settings.py
+</span>
+ <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+ <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+ <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+ <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+ <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+ <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+ <span class="s">'polls.apps.PollsConfig'</span><span class="p">,</span>
+ <span class="s">'books.apps.BooksConfig'</span><span class="p">,</span>
+ <span class="p">]</span>
+</code></pre>  </div> </div> </li> </ol> <h2 id="3-애플리케이션---model-코딩하기">3. 애플리케이션 - Model 코딩하기</h2> <ul> <li>순서</li> </ul> <div class="language-console highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="gp">ch3/books&gt;</span><span class="w"> </span>vim models.py    // 테이블 정의
+<span class="gp">ch3/books&gt;</span><span class="w"> </span>vim admins.py    // 테이블을 admin 사이트에 등록함
+<span class="gp">ch3&gt;</span><span class="w"> </span>python manage.py makemigrations    //db의 변경사항을 추출함
+<span class="gp">ch3&gt;</span><span class="w"> </span>python manage.py migrate       //db의 변경사항을 반영함
+<span class="gp">ch3&gt;</span><span class="w"> </span>python manage.py runserver     //반영여부를 웹브라우저에서 확인함
+</code></pre>  </div></div> <ol> <li> <p>models.py 파일에 테이블 정의</p> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="c1"># books/models.py
+</span>
+ <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+ <span class="c1"># Create your models here.
+</span> <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+ <span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+     <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s">'Author'</span><span class="p">)</span>
+     <span class="n">publisher</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'Publisher'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">)</span>
+     <span class="n">publication_date</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+
+     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">title</span>
+
+ <span class="k">class</span> <span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+     <span class="n">salutation</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+     <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">EmailField</span><span class="p">()</span>
+
+     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span>
+
+ <span class="k">class</span> <span class="nc">Publisher</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+     <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+     <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">URLField</span><span class="p">()</span>
+
+     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span>
+</code></pre>  </div> </div> <ul> <li>참고 : <a href="https://docs.djangoproject.com/en/3.1/ref/models/fields/">https://docs.djangoproject.com/en/3.1/ref/models/fields/</a>
+</li> <li>테이블 관계를 나타내는 필드 <ul> <li>N:1 - ForeignKey(on_delete 옵션 필수)</li> <li>N:N - ManyToManyField</li> <li>1:N - OneToOneField</li> </ul> </li> </ul> </li> <li> <p>admins.py 파일에 등록 : admin 사이트에 나오도록 함</p> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="c1"># books/admins.py
+</span>
+ <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+ <span class="c1"># Register your models here.
+</span> <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+ <span class="kn">from</span> <span class="nn">books.models</span> <span class="kn">import</span> <span class="n">Book</span><span class="p">,</span> <span class="n">Author</span><span class="p">,</span> <span class="n">Publisher</span>
+
+ <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Book</span><span class="p">)</span>
+ <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+ <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="n">Publisher</span><span class="p">)</span>
+</code></pre>  </div> </div> </li> <li> <p>작업 반영하기</p> <div class="language-console highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="gp"> ch3&gt;</span>python manage.py makemigrations
+<span class="gp"> ch3&gt;</span>python manage.py migrate
+</code></pre>  </div> </div> </li> <li> <p>작업 확인하기</p> <ul> <li>console에 <code class="language-plaintext highlighter-rouge notranslate">python manage.py runserver</code> 로 테스트서버를 가동 시킨 후, 웹사이트에 ‘http://localhost:8000/admin' 으로 접속하여 등록한 테이블이 보이는지 확인한다.</li> </ul> </li> </ol> <h2 id="4-애플리케이션---urlconf-코딩">4. 애플리케이션 - URLconf 코딩</h2> <h3 id="1-mysiteurlspy-파일에-books-어플리케이션-index-url을-등록">(1) mysite/urls.py 파일에 books 어플리케이션 index url을 등록</h3> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">HomeView</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'home'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'polls/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'polls.urls'</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'books/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'books.urls'</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre>  </div></div> <h3 id="2-booksurlspy-파일에-books-어플리케이션-url을-등록">(2) books/urls.py 파일에 books 어플리케이션 url을 등록</h3> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">app_name</span> <span class="o">=</span> <span class="s">'books'</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># /books/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">BooksModelView</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'index'</span><span class="p">),</span>
+    <span class="c1"># /books/book/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'book/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">BookList</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'book_list'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : ListView 
+</span>    <span class="c1"># /books/author/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'author/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">AuthorList</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'author_list'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : ListView
+</span>    <span class="c1"># /books/publichser/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'publisher/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">PublisherList</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'publisher_list'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : ListView
+</span>    <span class="c1"># /books/book/99
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'book/&lt;int:pk&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">BookDetail</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'book_detail'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : DetailView
+</span>    <span class="c1"># /books/author/99
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'author/&lt;int:pk&gt;'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">AuthorDetail</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'author_detail'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : DetailView
+</span>    <span class="c1"># /books/publisher/99
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'publisher/&lt;int:pk&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">PublisherDetail</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'publisher_detail'</span><span class="p">),</span> <span class="c1"># 뷰 클래스 : DetailView
+</span><span class="p">]</span>
+</code></pre>  </div></div> <h2 id="5-애플리케이션---클래스형-뷰-코딩하기">5. 애플리케이션 - 클래스형 뷰 코딩하기</h2> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">DetailView</span>
+<span class="kn">from</span> <span class="nn">books.models</span> <span class="kn">import</span> <span class="n">Book</span><span class="p">,</span> <span class="n">Author</span><span class="p">,</span> <span class="n">Publisher</span>
+
+<span class="c1"># Create your views here.
+</span>
+<span class="c1"># 템플릿 뷰만 모델링하여 사용하는 경우 TemplateView 사용
+</span><span class="k">class</span> <span class="nc">BooksModelView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="c1"># template_name 오버라이드 필수
+</span>    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'books/index.html'</span>
+
+    <span class="c1"># 템플릿 파일에 넘겨줘야 할 데이터가 있는경우 get_context_data 오버라이드
+</span>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># get_context_data를 오버라이드 할때는 반드시 첫줄에 super() 메소드를 호출해야 한다.
+</span>        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">().</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s">'model_list'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Book'</span><span class="p">,</span> <span class="s">'Author'</span><span class="p">,</span> <span class="s">'Publisher'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">class</span> <span class="nc">BookList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="c1"># model 테이블에 들어있는 모든 레코드를 가져와 구성하는 경우에는 테이블명만 지정해 주면 된다.
+</span>    <span class="c1"># object_list 속성 자동구성
+</span>    <span class="c1"># 템플릿 파일 모델명_list.html 자동구성
+</span>    <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+
+<span class="k">class</span> <span class="nc">AuthorList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Author</span>
+
+<span class="k">class</span> <span class="nc">PublisherList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Publisher</span>
+
+<span class="c1"># pk로 조회해서 특정 객체를 가져오는 경우에는 테이블명만 명시 해주면 된다.
+# 컨텍스트 변수로 object 를 자동으로 사용함
+# 템플릿 파일을 모델명_detail.html 로 자동으로 사용함
+</span><span class="k">class</span> <span class="nc">BookDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+
+<span class="k">class</span> <span class="nc">AuthorDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Author</span>
+
+<span class="k">class</span> <span class="nc">PublisherDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Publisher</span>
+</code></pre>  </div></div> <ul> <li>ListView, DetailView, TemplateView의 설명은 주석을 참고</li> </ul> <h2 id="6-애플리케이션---template-코딩">6. 애플리케이션 - Template 코딩</h2> <h3 id="1-urlviewtemplate-맵핑관계">(1) URL/VIEW/TEMPLATE 맵핑관계</h3> <table> <tbody> <tr> <td>URL 패턴</td> <td>VIEW</td> <td>TEMPLATE 파일명</td> </tr> <tr> <td>/books/</td> <td>BooksModelView</td> <td>index.html</td> </tr> <tr> <td>/books/book</td> <td>BookList</td> <td>book_list.html</td> </tr> <tr> <td>/books/author/</td> <td>AuthorList</td> <td>author_list.html</td> </tr> <tr> <td>/books/publisher/</td> <td>PublisherList</td> <td>publisher_list.html</td> </tr> <tr> <td>/books/book/3/</td> <td>BookDetail</td> <td>book_detail.html</td> </tr> <tr> <td>/books/auathor/3/</td> <td>AuthorDetail</td> <td>author_detail.html</td> </tr> <tr> <td>/books/publisher/3/</td> <td>PublisherDetail</td> <td>publisher_detail.html</td> </tr> </tbody> </table> <h3 id="2-layout-만들기--3단계-권장">(2) Layout 만들기 : 3단계 권장</h3>
+<div class="mermaid-wrap mb-4" data-lang="graph">
+    <div class="mermaid overflow-x-auto p-3">graph LR
+a(base.html)--&gt;|extends|b(base_books.html)--&gt;|extends|c(book_list.html&lt;br&gt;book_detail.html)
+</div>
+</div>
+ <ul> <li>ch3/templates/base.html <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+  &lt;head&gt;
+      {% load static %}
+      &lt;link rel="stylesheet" href="{% static 'admin/css/base.css' %}" /&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;title&gt;{% block title %}My Amazing Site{% endblock %}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;div id="sidebar"&gt;
+          {% block sidebar %}
+          &lt;ul&gt;
+              &lt;li&gt;&lt;a href="/"&gt;Project_Home&lt;/a&gt; &lt;/li&gt;
+              &lt;li&gt;&lt;a href="/admin/"&gt;Admin&lt;/a&gt; &lt;/li&gt;
+          &lt;/ul&gt;
+          {% endblock %}
+          &lt;br&gt;
+      &lt;/div&gt;
+
+      &lt;div id="content"&gt;
+          {% block content %}{% endblock %}
+      &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+    
+</code></pre>  </div> </div> <ul> <li>
+<code class="language-plaintext highlighter-rouge notranslate">load static</code> 으로 static 이라는 사용자 정의 태그 로딩 후, <code class="language-plaintext highlighter-rouge notranslate">static</code> 사용자 정의 태그를 통해 admin/css/base.css 스타일 파일을 찾게 함</li> </ul> </li> <li>ch3/templates/base_books.html <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {% extends 'base.html' %}
+
+  &lt;title&gt;{% block title %}Books Application Site{% endblock title %}&lt;/title&gt;
+  {% block sidebar %}
+      {{ block.super }}
+      &lt;ul&gt;
+          &lt;li&gt;&lt;a href="/books/"&gt;Books_Home&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+  {% endblock sidebar %}
+    
+</code></pre>  </div> </div> <ul> <li>sidebar 블록을 이어쓰려면, 를 필수로 해 주어야 함</li> </ul> </li> <li>ch3/books/templates/books/book_detail.html (나머지 author_detail.html, publisher_detail.html 도 유사함) <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {% extends 'base_books.html' %}
+
+  {% block content %}
+      &lt;h1&gt;{{ object.title }}&lt;/h1&gt;
+      &lt;br&gt;
+      &lt;li&gt;Authors:
+          {% for author in object.authors.all %}
+              {{ author }}
+          {% if not forloop.last %},
+          {% else %}
+          {% endif %}
+          {% endfor %}
+      &lt;/li&gt;
+      &lt;li&gt;Publisher: {{ object.publisher }}&lt;/li&gt;
+      &lt;li&gt;Publication Date: {{ object.publication_date }}&lt;/li&gt;
+  {% endblock content %}
+    
+</code></pre>  </div> </div> <ul> <li>DetailView 에서는 모델의 조회 결과를 object 파라미터로 넘겨 주므로 object 파라미터를 사용함</li> </ul> </li> <li>ch3/books/templates/books/book_list.html(나머지 author_list.html, publisher_list.html 도 유사함) <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+  {% extends "base_books.html" %}
+  {% block title %} Book List {% endblock title %}
+  {% block content %}
+  &lt;h2&gt;Book List&lt;/h2&gt;
+      &lt;ul&gt;
+          {% for book in object_list %}
+          &lt;li&gt;&lt;a href="{% url 'books:book_detail' book.id %}" &gt;{{ book.title }}&lt;/a&gt;&lt;/li&gt;
+          {% endfor %}
+      &lt;/ul&gt;
+  {% endblock content %}
+    
+</code></pre>  </div> </div> <ul> <li>ListView 에서는 모델의 조회 결과를 object 파라미터로 넘겨 주므로 object 파라미터를 사용함</li> </ul> </li> </ul> <h2 id="7-home-페이지-작성">7. home 페이지 작성</h2> <ul> <li>(http://localhost:8000) 접속 시 보여지는 첫 페이지</li> </ul> <ol> <li>mysite/urls.py ‘urlpatterns'에 경로 추가 <ul> <li><code class="language-plaintext highlighter-rouge notranslate"> path('', views.HomeView.as_view(), name='home'),</code></li> </ul> </li> <li> <p>mysite/views.py 에 하기 코딩 추가</p> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+ <span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">apps</span>
+
+ <span class="k">class</span> <span class="nc">HomeView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+     <span class="n">template_name</span> <span class="o">=</span> <span class="s">'home.html'</span>
+
+     <span class="c1"># 템플릿에 데이터를 전달하려면 get_context_data를 오버라이딩 해야 함
+</span>     <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+         <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">().</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+         <span class="c1"># context['app_list'] = ['polls','books']
+</span>         <span class="n">dictVerbose</span> <span class="o">=</span> <span class="p">{}</span>
+         <span class="c1"># 각 애플리케이션의 apps.py 에 선언된 속성들의 값을 순회
+</span>         <span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">apps</span><span class="p">.</span><span class="n">get_app_configs</span><span class="p">():</span>
+             <span class="c1"># 그 중, site-packages 에 있는 app 속성은 외브 라이브러리 이므로, 제외하는 코딩
+</span>             <span class="k">if</span> <span class="s">'site-packages'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">app</span><span class="p">.</span><span class="n">path</span><span class="p">:</span>
+                 <span class="n">dictVerbose</span><span class="p">[</span><span class="n">app</span><span class="p">.</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">name</span>
+
+         <span class="n">context</span><span class="p">[</span><span class="s">'verbose_dict'</span><span class="p">]</span> <span class="o">=</span> <span class="n">dictVerbose</span>
+         <span class="k">return</span> <span class="n">context</span>
+
+</code></pre>  </div> </div> <ul> <li>주석 참조</li> </ul> </li> <li> <p>home.html 작성</p> <div class="language-plaintext highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>    
+ {% extends 'base.html' %}
+
+ {% block content %}
+     &lt;h2&gt;YMkim Django Application&lt;/h2&gt;
+     &lt;ul&gt;
+         {% for key, value in verbose_dict.items %}
+             {% with key|add:":"|add:"index" as urlvar %}
+                 &lt;li&gt;&lt;a href="{% url urlvar %}"&gt;{{ value }}&lt;/a&gt;&lt;/li&gt;
+             {% endwith %}
+         {% endfor %}
+     &lt;/ul&gt;
+ {% endblock content %}
+    
+</code></pre>  </div> </div> </li> </ol> <h2 id="8-polls-애플리케이션---클래스-형-뷰로-전환">8. Polls 애플리케이션 - 클래스 형 뷰로 전환</h2> <ul> <li>github에 올려 둔 소스를 참고하세요. <ul> <li>github 주소 : <a href="https://github.com/82iirriiss/python_basic_project">https://github.com/82iirriiss/python_basic_project</a>
+</li> </ul> </li> </ul> <h2 id="9-로그-추가하기">9. 로그 추가하기</h2> <ol> <li> <p>로그 디렉토리 생성 <code class="language-plaintext highlighter-rouge notranslate">ch3&gt;mkdir logs</code></p> </li> <li> <p>settings.py 파일에 로그 설정하기</p> <ul> <li>각 컴포넌트 (formatters, handlers, loggers, filters)는 모두 ‘s'로 끝나니 철자 주의할 것</li> </ul> </li> </ol> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>    LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s',
+            'datefmt': '%d/%b/%Y %H:%M:%S'
+        },
+    },
+    'handlers': {
+            'file': {
+                'level': 'DEBUG',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'logs', 'mysite.log'),
+                'formatter': 'verbose'
+            }
+    },
+    'loggers': {
+        'polls': {
+            'handlers': ['file'],
+            'level': 'DEBUG'
+        }
+    }
+}
+</code></pre>  </div></div> </div> </div> <hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/bfd381b0a7beaeded1e971b5847660fb5736053b" title="bfd381b0a7beaeded1e971b5847660fb5736053b" rel="noreferrer" target="_blank">bfd381b</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> jekyll-rtd-theme </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 3558 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="jekyll-rtd-theme">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/mermaid.min.js"></script> <script> mermaid.initialize({}); </script> </body> </html>
