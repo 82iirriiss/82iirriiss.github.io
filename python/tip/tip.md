@@ -33,3 +33,9 @@ sort: 1
 
 ## 장고에서 지원하는 model의 필드
 - 참고 : <https://docs.djangoproject.com/en/3.1/ref/models/fields/>
+
+## CentOs 에서 Python의 특정버전을 범용적으로 사용하는 방법
+`sudo alternatives --set python /usr/bin/python3` 
+
+## 운영서버 이전하기 전 설정 체크 명령어
+`$ python manage.py check --deploy`
