@@ -39,3 +39,4 @@ sort: 1
 
 ## 운영서버 이전하기 전 설정 체크 명령어
 `$ python manage.py check --deploy`
+

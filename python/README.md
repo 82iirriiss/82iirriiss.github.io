@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Python
+# Django & Python
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
