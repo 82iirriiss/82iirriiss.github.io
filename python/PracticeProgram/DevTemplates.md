@@ -9,9 +9,9 @@ sort : 6
 2. \{\{ post.modify_dt\|date:"N d, Y" \}\} : July 05, 2019 형식으로 표현됨
 3. \{\{ object.modify_dt\|date:"j F Y" \}\} : 12 July 2015 형식
 4. {% raw %}{% now "N d, Y" %}{% endraw %} : 오늘 날짜의 July 18, 2015 형식
-5. {% raw %}{{ post.modify_dt|date:'Y-m-d' }}{% endraw %} : 날짜를 2019-06-12 형식으로 표현
-6. {% raw %}{{ post.modify_dt|date:'F' }}{% endraw %} : 월을 july 형식으로 표현
-7. {% raw %}{{ post.modify_dt|date:'N, Y' }}{% endraw %} : 날짜를 May, 2015 형식으로 표현
+5. {% raw %}{{ post.modify_dt\|date:'Y-m-d' }}{% endraw %} : 날짜를 2019-06-12 형식으로 표현
+6. {% raw %}{{ post.modify_dt\|date:'F' }}{% endraw %} : 월을 july 형식으로 표현
+7. {% raw %}{{ post.modify_dt\|date:'N, Y' }}{% endraw %} : 날짜를 May, 2015 형식으로 표현
 
 ## 2. 컨텍스트 오브젝트
 1. **<font color="blue">object_list</font>**  : ListView등의 클래스뷰에서 전달하는 객체 리스트
