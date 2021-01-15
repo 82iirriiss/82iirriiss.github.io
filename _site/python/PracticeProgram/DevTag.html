@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="Blog앱에 태그 달기 각 포스트마다 태그 달기 태그에 해당하는 포스트를 리스트로 보여주기 태그들만 모아서 각 태그에 링크 달기 사용하는 패키지 : django-taggit, django-taggit-templatetags2 [참고] django-taggit 문서..."> <meta name="revised" content="8c0eb9bd0f04dd1d273b6917620834911ed5d1d4"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>Blog앱에 태그 달기 · jekyll-rtd-theme</title> <meta name="twitter:title" content="Blog앱에 태그 달기 · jekyll-rtd-theme"> <meta name="twitter:description" content="Blog앱에 태그 달기 각 포스트마다 태그 달기 태그에 해당하는 포스트를 리스트로 보여주기 태그들만 모아서 각 태그에 링크 달기 사용하는 패키지 : django-taggit, django-taggit-templatetags2 [참고] django-taggit 문서..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/python/PracticeProgram/DevTag.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="Blog앱에 태그 달기 · jekyll-rtd-theme"> <meta property="og:description" content="Blog앱에 태그 달기 각 포스트마다 태그 달기 태그에 해당하는 포스트를 리스트로 보여주기 태그들만 모아서 각 태그에 링크 달기 사용하는 패키지 : django-taggit, django-taggit-templatetags2 [참고] django-taggit 문서..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/python/PracticeProgram/DevTag.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2021-01-16T01:18:19+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/python/PracticeProgram/DevTag.html" }, "headline": "Blog앱에 태그 달기 · jekyll-rtd-theme", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2021-01-16T01:18:19+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars1.githubusercontent.com/u/59656683?v=4" } }, "description": "Blog앱에 태그 달기 각 포스트마다 태그 달기 태그에 해당하는 포스트를 리스트로 보여주기 태그들만 모아서 각 태그에 링크 달기 사용하는 패키지 : django-taggit, django-taggit-templatetags2 [참고] django-taggit 문서..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="prev" href="http://localhost:4000/python/PracticeProgram/DevTemplates.html">
+<link rel="canonical" href="http://localhost:4000/python/PracticeProgram/DevTag.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "jekyll-rtd-theme", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="Just another documentation theme compatible with GitHub Pages"> <i class="fa fa-home"></i> jekyll-rtd-theme </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Django &amp; Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/pythonAnyWhereCloudServerDeploy/"> Cloud (pythonanywhere) 서버에 Django 배포하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/pythonAnyWhereCloudServerDeploy/pythonanywhereDeploy.html">1. PythonAnyWhere에 장고소스 배포하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/ApacheWebServerDeploy/"> Apache 웹서버 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/ApacheWebServerDeploy/apacheWebServerDeploy.html">1. 아파치 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/NginxWebServerDeploy/"> NGINX 웹서버와 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/NginxWebServerDeploy/nginxWebServerDeploy.html">1. NGINX 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/JangoDevelopmentBasic/"> 파이썬 가상환경 사용하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/JangoDevelopmentBasic/jangoBasic.html">1. 가상환경 사용하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/PracticeProgram/"> 실전 프로그램 개발 요약 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/design.html">1. 설계시 알아두기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/makeBorn.html">2. 개발 뼈대 세우기 시 알아두기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevModel.html">3. 모델 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevURLconf.html">4. URLconf 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevView.html">5. 뷰 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevTemplates.html">6. 템플릿 개발 시 알아두기</a> </li> <li class="toc level-2 current" data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline current" href="/python/PracticeProgram/DevTag.html">7. Blog앱에 태그 달기</a> </li>
+</ul> </li>
+</ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python-grammar/"> 파이썬 기본문법 </a><ul> </ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">jekyll-rtd-theme</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/python/">python</a></li>
+<li class="breadcrumb-item"><a href="/python/PracticeProgram/">PracticeProgram</a></li>
+<li class="breadcrumb-item" aria-current="page">DevTag.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/python/PracticeProgram/DevTag.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="blog앱에-태그-달기">Blog앱에 태그 달기</h1> <ol> <li>각 포스트마다 태그 달기</li> <li>태그에 해당하는 포스트를 리스트로 보여주기</li> <li>태그들만 모아서 각 태그에 링크 달기</li> <li>사용하는 패키지 : django-taggit, django-taggit-templatetags2</li> </ol> <ul> <li>[참고] django-taggit 문서 : <a href="https://django-taggit.readthedocs.io/en/latest/index.html">https://django-taggit.readthedocs.io/en/latest/index.html</a>
+</li> <li>[참고] django-taggit-templatetags2 문서 : <a href="https://github.com/fizista/django-taggit-templatetags2">https://github.com/fizista/django-taggit-templatetags2</a>
+</li> </ul> <h2 id="1-설계">1. 설계</h2> <h4 id="-1--테이블-설계">[ 1 ] 테이블 설계</h4> <ul> <li>Post 테이블에 ‘tags' 필드 추가</li> <li>‘tags' 필드의 타입은, django-taggit 에서 미리 설정해 둔 ‘TaggableManager' 를 사용하여야 함</li> </ul> <table> <thead> <tr> <th>필드명</th> <th>타입</th> <th>제약조건</th> <th>설명</th> </tr> </thead> <tbody> <tr> <td>id</td> <td>Integer</td> <td>PK, Audo Increment</td> <td>기본키</td> </tr> <tr> <td>title</td> <td>CharField(50)</td> <td> </td> <td>포스트 제목</td> </tr> <tr> <td>slug</td> <td>SlugField(50)</td> <td>Unique</td> <td>포스트 제목 별칭</td> </tr> <tr> <td>description</td> <td>CharField(100)</td> <td>Blank</td> <td>포스트 내용 한 줄 설명</td> </tr> <tr> <td>content</td> <td>TextField</td> <td> </td> <td>포스트 내용 기록</td> </tr> <tr> <td>create_dt</td> <td>DateTimeField</td> <td>auto_now_add</td> <td>생성날짜</td> </tr> <tr> <td>modify_dt</td> <td>DateTimeField</td> <td>auto_now</td> <td>수정날짜</td> </tr> <tr> <td><strong>tags</strong></td> <td><strong>TaggableManager</strong></td> <td><strong>Blank, Null</strong></td> <td><strong>포스트에 등록한 태그</strong></td> </tr> </tbody> </table> <h4 id="-2--url-설계">[ 2 ] URL 설계</h4> <ul> <li>태그 클라우드 (태그들의 모음) URL</li> <li>특정 태그가 달려 있는 포스트들의 리스트 URL</li> </ul> <table> <thead> <tr> <th>URL패턴</th> <th>뷰 이름</th> <th>템플릿 파일명</th> </tr> </thead> <tbody> <tr> <td>/blog/</td> <td>PostLV(ListView)</td> <td>post_all.html</td> </tr> <tr> <td>/blog/post/</td> <td>PostLV(ListView)</td> <td>post_all.html</td> </tr> <tr> <td>/blog/post/django-example/</td> <td>PostDV(DetailView)</td> <td>post_detail.html</td> </tr> <tr> <td>/blog/archive/</td> <td>PostAV(ArchiveIndexView)</td> <td>post_archive.html</td> </tr> <tr> <td>/blog/archive/2012/</td> <td>PostYAV(YearArchiveView)</td> <td>post_archive_year.html</td> </tr> <tr> <td>/blog/archive/2012/nov/</td> <td>PostMAV(MonthArchiveView)</td> <td>post_archive_month.html</td> </tr> <tr> <td>/blog/archive/2012/nov/10/</td> <td>PostDAV(DayArchiveView)</td> <td>post_archive_day.html</td> </tr> <tr> <td>/blog/archive/today/</td> <td>PostTAV(TodayArchiveView)</td> <td>post_archive_day.html</td> </tr> <tr> <td><strong>/blog/tag/</strong></td> <td><strong>TagCloudTV(TemplateView)</strong></td> <td><strong>taggit_cloud.html</strong></td> </tr> <tr> <td><strong>/blog/tag/tagname/</strong></td> <td><strong>TaggedObjectLV(ListView)</strong></td> <td><strong>taggit_post_list.html</strong></td> </tr> </tbody> </table> <h2 id="2-작업-순서">2. 작업 순서</h2> <ol> <li>뼈대만들기 : settings.py에 INSTALLED_APPS 항목에 taggit, taggit_templatetags2 추가, tag 관련 옵션 추가</li> <li>모델링 : Post 모델에 tags 컬럼추가 및 메소드 오버라이딩 후 migrate 하기</li> <li>URLconf 코딩 : tag 관련 페이지의 url 추가하기</li> <li>View 개발 : tag 관련 클래스 뷰 추가</li> <li>templates 개발 : post_detail.html, taggit_post_list.html, taggit_cloud.html 추가 개발</li> </ol> <h2 id="3-뼈대-만들기">3. 뼈대 만들기</h2> <h4 id="-1--mysitesettingspy--수정하기">[ 1 ] mysite/settings.py 수정하기</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span><span class="p">[</span>
+    <span class="c1"># 생략
+</span>    <span class="s">'taggit.apps.TaggitAppConfig'</span><span class="p">,</span> <span class="c1"># 참고 사이트에 따르면, 'taggit' 으로 등록해도 됨. 지금은 django-taggit 패키지의 apps.py 를 참고하여 기입함
+</span>    <span class="s">'taggit-templatetags2'</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># 생략
+</span>
+<span class="c1"># 옵션 추가
+</span><span class="n">TAGGIT_CASE_INSENSITIVE</span> <span class="o">=</span> <span class="bp">True</span> <span class="c1"># 대소문자 구분하지 않음
+</span><span class="n">TAGGIT_LIMIT</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># 태그 클라우드에 나타나는 태그의 최대 갯 수
+</span></code></pre>  </div></div> <h2 id="4-모델-코딩하기">4. 모델 코딩하기</h2> <h4 id="-1--post-모델-객체에-tags-필드-추가">[ 1 ] Post 모델 객체에 ‘tags' 필드 추가</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># blog/models.py
+# 상단 생략
+</span><span class="kn">from</span> <span class="nn">taggit.managers</span> <span class="kn">import</span> <span class="n">TaggableManager</span> 
+
+<span class="c1"># 중간 생략, modify_dt 속성 다음에 'tags' 추가
+</span><span class="n">tags</span> <span class="o">=</span> <span class="n">TaggableManager</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># 이하 생략
+</span></code></pre>  </div></div> <ul> <li>TaggableManager : taggit 패키지에 정의되어 있으며, ManyToManyField와 models.Manager 의 역할을 동시에 함. Tags 라는 별칭과 null=True 옵션이 디폴트 설정됨</li> </ul> <h4 id="-2--태그이름이-어드민-사이트에-나타나도록-adminpy-변경">[ 2 ] 태그이름이 어드민 사이트에 나타나도록 admin.py 변경</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># blog/admin.py
+</span>
+<span class="k">class</span> <span class="nc">PostAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s">'id'</span><span class="p">,</span> <span class="s">'title'</span><span class="p">,</span> <span class="s">'modify_dt'</span><span class="p">,</span> <span class="s">'tag_list'</span><span class="p">)</span> <span class="c1"># 장고의 models 에서 TaggableManager 타입을 지원하지 않으므로, taggit에서는 태그이름이 화면에 나올 수 있도록 'tag_list' 를 제공함
+# 생략
+</span>
+<span class="c1"># 두 메소드 추가
+</span>    
+    <span class="c1"># Post 테이블과 taggit 에서 제공하는 Tag 테이블이 ManyToMany 관계이므로, Tag 테이블 관련 레코드를 한번의 쿼리로 가져오기 위한 메소드. 
+</span>    <span class="c1"># 쿼리 횟수를 줄여 성능을 높이고저 prefetch_related() 메소드 사용함 
+</span>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">().</span><span class="n">get_queryset</span><span class="p">(</span><span class="n">request</span><span class="p">).</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s">'tags'</span><span class="p">)</span>
+
+    <span class="c1"># tag_list로 보여줄 내용을 정의
+</span>    <span class="k">def</span> <span class="nf">tag_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="nb">all</span><span class="p">())</span>
+</code></pre>  </div></div> <h4 id="-3--변경사항-데이터베이스에-반영">[ 3 ] 변경사항 데이터베이스에 반영</h4> <div class="language-bash highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">(</span>venv<span class="o">)</span> <span class="nv">$ </span>python3 manage.py makemigrations
+<span class="o">(</span>venv<span class="o">)</span> <span class="nv">$ </span>python3 manage.py migrate
+</code></pre>  </div></div> <h4 id="-4--admin-사이트-확인">[ 4 ] Admin 사이트 확인</h4> <ul> <li>(venv) $ python3 manage.py runserver</li> <li>http://localhost:8000/admin</li> <li>Posts 테이블에 ‘tags' 항목이 추가됨 (tags는 콤마로 구분된 태그이름을 나열하여 등록함)</li> <li>TAGGIT 앱에 Tag와 TaggedItem 2개의 테이블이 추가됨</li> </ul> <h2 id="5-urlconf-코딩">5. URLconf 코딩</h2> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># blog/urls.py
+</span>
+<span class="c1"># 상단 생략
+</span>
+<span class="c1"># Example : /blog/tag/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'tag/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">TagCloudTV</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'tag_cloud'</span><span class="p">)</span> <span class="c1"># TamplateView 를 사용. taggit-templatetag2에서 처리를 template 에서 하도록 설계되었음
+# Example : /blog/tag/tagname/
+</span>    <span class="n">path</span><span class="p">(</span><span class="s">'tag/&lt;str:tag&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="p">.</span><span class="n">TaggedObjectLV</span><span class="p">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span> <span class="o">=</span> <span class="s">'tagged_object_list'</span><span class="p">)</span>
+</code></pre>  </div></div> <h2 id="6-뷰-코딩">6. 뷰 코딩</h2> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="c1"># blog/views.py
+</span>
+<span class="c1"># 상위 내용 생략
+</span>
+<span class="c1"># 코드가 간단한 이유는, 클라우드 처리기능이 템플릿 파일에 있기 때문. 
+# 템플릿에서 {% get_tagcloud %}  템플릿 태그가 처리를 함.
+</span><span class="k">class</span> <span class="nc">TagCloudTV</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'taggit/taggit_cloud.html'</span>
+
+<span class="k">class</span> <span class="nc">TaggedObjectLV</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'taggit/taggit_post_list.html'</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+
+    <span class="c1"># 모델에서 반환한 Post &amp; Tag 조인 테이블에서 tags의 name이 PATHParameter로 넘어온 tag 와 같은 목록만 반환
+</span>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Post</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">tags__name</span><span class="o">=</span><span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'tag'</span><span class="p">))</span> 
+
+    <span class="c1"># 기본적으로 ListView 에서는 object_list 변수를 넘겨주지만, 여기에 'tagname'을 추가하기 위해 메소드를 오버라이딩 함
+</span>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> 
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">().</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> 
+        <span class="n">context</span><span class="p">[</span><span class="s">'tagname'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">'tag'</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre>  </div></div> <h2 id="7-탬플릿-코딩">7. 탬플릿 코딩</h2> <ul> <li>템플릿 파일의 위치는 <font color="red">root/blog/templates/taggit/*.html</font> 로 하였음</li> <li>root/templates/taggit/*.html 로 위치를 지정하는 것도 좋은 방법임</li> </ul> <h4 id="-1--tags-가-보이도록-post_detailhtml-수정">[ 1 ] tags 가 보이도록 post_detail.html 수정</h4> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% extends "base.html" %}
+
+{% block title %}post_detail.html{% endblock %}
+
+{% block content %}
+    &lt;h2&gt;{{ object.title }}&lt;/h2&gt;
+
+    &lt;p&gt;
+        {% if object.get_next %}
+        &lt;a href="{{ object.get_next.get_absolute_url }}" title="View previous post"&gt;
+            &lt;i class="fas fa-arrow-circle-left"&gt;&lt;/i&gt; {{ object.get_next }}
+        &lt;/a&gt;
+        {% endif %}
+
+        {% if object.get_previous %}
+        | &lt;a href="{{ object.get_previous.get_absolute_url }}" title="View next post"&gt;
+        {{ object.get_previous }} &lt;i class="fas fa-arrow-circle-right"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        {% endif %}
+    &lt;/p&gt;
+
+    &lt;div&gt;{{ object.modify_dt|date:"j F Y" }}&lt;/div&gt;
+    &lt;br&gt;
+
+    &lt;div&gt;
+        {{ object.content|linebreaks }}
+    &lt;/div&gt;
+
+    &lt;br&gt;
+    &lt;div&gt;
+        &lt;b&gt;TAGS&lt;/b&gt; &lt;i class="fas fa-tag"&gt;&lt;/i&gt;
+        {% load taggit_templatetags2_tags %}
+        {% get_tags_for_object object as "tags" %}
+        {% for tag in tags %}
+        &lt;a href="{% url 'blog:tagged_object_list' tag.name %}"&gt;{{tag.name}}&lt;/a&gt;
+        {% endfor %}
+	&amp;emsp;
+        &lt;a href="{% url 'blog:tag_cloud' %}"&gt; &lt;span class="btn btn-info btn-sm"&gt;TagCloud&lt;/span&gt; &lt;/a&gt;
+    &lt;/div&gt;
+{% endblock %}
+
+</code></pre>  </div></div> <ul> <li> <font color="red">{% load taggit_templatetags2_tags %} : taggit 패키지에 정의된 템플릿 태그를 사용하기 위하여 load 함</font> </li> <li> <font color="red">{% get_tags_for_object %} : object 객체에 달려 있는 태그들의 리스트를 추출하는 커스텀 태그, 추출한 태그 리스트는 tags 변수에 할당</font> </li> </ul> <h4 id="-2--taggit_cloudhtml">[ 2 ] taggit_cloud.html</h4> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% extends "base.html" %}
+
+{% block title %}taggit_cloud.html{% endblock %}
+
+{% block extra-style %}
+&lt;style type="text/css"&gt;
+.tag-cloud {
+    width: 40%;
+    margin-left: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid orange;
+    background-color: #ffc;
+}
+.tag-1 {font-size: 12px;}
+.tag-2 {font-size: 14px;}
+.tag-3 {font-size: 16px;}
+.tag-4 {font-size: 18px;}
+.tag-5 {font-size: 20px;}
+.tag-6 {font-size: 24px;}
+&lt;/style&gt;
+{% endblock %}
+
+{% block content %}
+    &lt;h1&gt;Blog Tag Cloud&lt;/h1&gt;
+    &lt;br&gt;
+
+    &lt;div class="tag-cloud"&gt;
+        {% load taggit_templatetags2_tags %}
+        {% get_tagcloud as tags %}
+        {% for tag in tags %}
+        &lt;span class="tag-{{tag.weight|floatformat:0}}"&gt;
+            &lt;a href="{% url 'blog:tagged_object_list' tag.name %}"&gt; {{tag.name}}({{tag.num_times}})&lt;/a&gt;
+        &lt;/span&gt;
+        {% endfor %}
+    &lt;/div&gt;
+{% endblock %}
+
+
+
+</code></pre>  </div></div> <ul> <li> <font color="red">{% get_tagcloud as tags %} : 모든 태그를 추출하는 커스텀 태그. 태그 리스트를 tags 변수에 할당</font> </li> <li> <font color="red">**태그 객체와 관련된 속성들**</font> <ul> <li> <font color="red">{{tag.name}}: 태그의 이름</font> </li> <li> <font color="red">{{tag.num_times}}: 태그가 몇번 사용되었는지</font> </li> <li> <font color="red">{{tag.weight}}: 태그의 중요도, {{tag.num_times}}에 의해 변환된 수치 </font> </li> <li> <font color="red">{{tag.weight|floatformat:0}}: tag.weight 를 반올림하여 정수로 표현하는 필터 </font> </li> </ul> </li> </ul> <h4 id="-3--taggit_post_listhtml">[ 3 ] taggit_post_list.html</h4> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>
+{% extends "base.html" %}
+
+{% block title %}taggit_post_list.html{% endblock %} 
+
+{% block content %}
+
+    &lt;h1&gt;Posts for tag - {{ tagname }}&lt;/h1&gt; 
+    &lt;br&gt;
+
+    {% for post in object_list %}
+        &lt;h2&gt;&lt;a href='{{ post.get_absolute_url }}'&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt; 
+        {{ post.modify_dt|date:"N d, Y" }} 
+        &lt;p&gt;{{ post.description }}&lt;/p&gt; 
+    {% endfor %}
+
+{% endblock %}
+
+
+
+</code></pre>  </div></div> <ul> <li> <font color="red">{{tagname}}: view 에서 정의한 컨텍스트 변수에 추가한 속성</font> </li> </ul> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/python/PracticeProgram/DevTemplates.html" class="btn" title="템플릿 개발 시 알아두기" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"></div> </div>
+<hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020-2021,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/8c0eb9bd0f04dd1d273b6917620834911ed5d1d4" title="8c0eb9bd0f04dd1d273b6917620834911ed5d1d4" rel="noreferrer" target="_blank">8c0eb9b</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> jekyll-rtd-theme </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 6051 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="jekyll-rtd-theme">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>
