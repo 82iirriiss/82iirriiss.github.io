@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="자료형 자료형 확인 : type() 함수 &amp;gt;&amp;gt;&amp;gt; print(type(&quot;안녕하세요?&quot;)) &amp;lt;class 'str'&amp;gt; [ 1 ] 문자열 1. 큰 따옴표, 작은 따옴표 모두 사..."> <meta name="revised" content="5cc140179f146dd0bc550ecf6d5afbb2e5a9c0c7"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>자료형 · jekyll-rtd-theme</title> <meta name="twitter:title" content="자료형 · jekyll-rtd-theme"> <meta name="twitter:description" content="자료형 자료형 확인 : type() 함수 &amp;gt;&amp;gt;&amp;gt; print(type(&quot;안녕하세요?&quot;)) &amp;lt;class 'str'&amp;gt; [ 1 ] 문자열 1. 큰 따옴표, 작은 따옴표 모두 사..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/python-grammar/dataType.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="자료형 · jekyll-rtd-theme"> <meta property="og:description" content="자료형 자료형 확인 : type() 함수 &amp;gt;&amp;gt;&amp;gt; print(type(&quot;안녕하세요?&quot;)) &amp;lt;class 'str'&amp;gt; [ 1 ] 문자열 1. 큰 따옴표, 작은 따옴표 모두 사..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/python-grammar/dataType.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2021-01-20T01:00:19+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/python-grammar/dataType.html" }, "headline": "자료형 · jekyll-rtd-theme", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2021-01-20T01:00:19+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars1.githubusercontent.com/u/59656683?v=4" } }, "description": "자료형 자료형 확인 : type() 함수 &amp;gt;&amp;gt;&amp;gt; print(type(&quot;안녕하세요?&quot;)) &amp;lt;class &#39;str&#39;&amp;gt; [ 1 ] 문자열 1. 큰 따옴표, 작은 따옴표 모두 사..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="prev" href="http://localhost:4000/python-grammar/gettingStart.html">
+<link rel="next" href="http://localhost:4000/python-grammar/condition.html">
+<link rel="canonical" href="http://localhost:4000/python-grammar/dataType.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "jekyll-rtd-theme", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="Just another documentation theme compatible with GitHub Pages"> <i class="fa fa-home"></i> jekyll-rtd-theme </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Django &amp; Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/pythonAnyWhereCloudServerDeploy/"> Cloud (pythonanywhere) 서버에 Django 배포하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/pythonAnyWhereCloudServerDeploy/pythonanywhereDeploy.html">1. PythonAnyWhere에 장고소스 배포하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/ApacheWebServerDeploy/"> Apache 웹서버 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/ApacheWebServerDeploy/apacheWebServerDeploy.html">1. 아파치 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/NginxWebServerDeploy/"> NGINX 웹서버와 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/NginxWebServerDeploy/nginxWebServerDeploy.html">1. NGINX 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/JangoDevelopmentBasic/"> 파이썬 가상환경 사용하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/JangoDevelopmentBasic/jangoBasic.html">1. 가상환경 사용하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/PracticeProgram/"> 실전 프로그램 개발 요약 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/design.html">1. 설계시 알아두기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/makeBorn.html">2. 개발 뼈대 세우기 시 알아두기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevModel.html">3. 모델 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevURLconf.html">4. URLconf 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevView.html">5. 뷰 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevTemplates.html">6. 템플릿 개발 시 알아두기</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/PracticeProgram/DevTag.html">7. Blog앱에 태그 달기</a> </li>
+</ul> </li>
+</ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python-grammar/"> 파이썬 기본문법 </a><ul> <li class="toc level-1 " data-sort="1" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/gettingStart.html">1. 시작하기</a> </li> <li class="toc level-1 current" data-sort="2" data-level="1"> <a class="d-flex flex-items-baseline current" href="/python-grammar/dataType.html">2. 자료형</a> </li> <li class="toc level-1 " data-sort="3" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/condition.html">3. 조건문</a> </li> <li class="toc level-1 " data-sort="4" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/loop.html">4. 반복문</a> </li> <li class="toc level-1 " data-sort="5" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/function.html">5. 함수</a> </li> <li class="toc level-1 " data-sort="6" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/exeption.html">6. 예외처리</a> </li> <li class="toc level-1 " data-sort="7" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/module.html">7. 모듈</a> </li> <li class="toc level-1 " data-sort="8" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/class.html">8. 클래스</a> </li>
+</ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">jekyll-rtd-theme</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/python-grammar/">python-grammar</a></li>
+<li class="breadcrumb-item" aria-current="page">dataType.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/python-grammar/dataType.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="자료형">자료형</h1> <h4 id="자료형-확인--type-함수">자료형 확인 : type() 함수</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s">"안녕하세요?"</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">str</span><span class="s">'&gt;
+</span></code></pre>  </div></div> <h2 id="-1--문자열">[ 1 ] 문자열</h2> <h4 id="1-큰-따옴표-작은-따옴표-모두-사용-가능">1. 큰 따옴표, 작은 따옴표 모두 사용 가능</h4> <h4 id="2-이스케이프-문자-사용하여-특수문자-표현-가능">2. 이스케이프 문자 사용하여 특수문자 표현 가능</h4> <h4 id="3-여러줄-문자열">3. 여러줄 문자열</h4> <ul> <li>‘\n' 을 사용</li> <li>"""~""", ‘''~''' <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">"""줄바꿈이 있는
+문자열
+출력"""</span><span class="p">)</span>
+<span class="n">줄바꿈이</span> <span class="n">있는</span>
+<span class="n">문자열</span>
+<span class="n">출력</span>
+</code></pre>  </div> </div> </li> </ul> <h4 id="4-줄바꿈-없이-문자열-만들기">4. 줄바꿈 없이 문자열 만들기</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s">"""
+줄바꿈이 있는
+문자열
+출력
+"""</span><span class="p">)</span> <span class="c1"># 시작과 끝의 줄바꿈이 발생됨
+</span><span class="p">(</span><span class="n">줄바꿈</span> <span class="n">발생</span><span class="p">)</span>
+<span class="n">줄바꿈이</span> <span class="n">있는</span>
+<span class="n">문자열</span>
+<span class="n">출력</span>
+<span class="p">(</span><span class="n">줄바꿈</span> <span class="n">발생</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">"""</span><span class="se">\
+</span><span class="s">줄바꿈이 있는 
+문자열
+출력</span><span class="se">\
+</span><span class="s">"""</span><span class="p">)</span> <span class="c1"># 줄바꿈 없이 바로 출력 되어짐
+</span><span class="n">줄바꿈이</span> <span class="n">있는</span>
+<span class="n">문자열</span>
+<span class="n">출력</span>
+</code></pre>  </div></div> <h4 id="5-문자열의-연산자">5. 문자열의 연산자</h4> <ol> <li>+ <ul> <li>문자열의 연결</li> <li>문자열은 무조건 문자열끼리 +로 연결 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">"안녕"</span> <span class="o">+</span> <span class="s">"하세요"</span><span class="p">)</span>
+<span class="n">안녕하세요</span>
+</code></pre>  </div> </div> </li> </ul> </li> <li>* <ul> <li>문자열 * 숫자</li> <li>문자열을 숫자만큼 반복 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">'안녕!'</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">안녕</span><span class="err">!</span><span class="n">안녕</span><span class="err">!</span><span class="n">안녕</span><span class="err">!</span>
+</code></pre>  </div> </div> </li> </ul> </li> <li>[숫자] <ul> <li>인덱싱</li> <li>문자선택 연산자 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">"안녕하세요"</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">안</span>
+<span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">"안녕하세요"</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">요</span>
+</code></pre>  </div> </div> </li> </ul> </li> <li>[숫자:숫자] <ul> <li>슬라이싱</li> <li>문자열 범위 선택 연산자</li> <li>마지막 숫자의 문자는 포함하지 않음 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="s">'안녕하세요'</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">녕하</span>
+</code></pre>  </div> </div> </li> </ul> </li> <li>IndexError 예외 <ul> <li>리스트/문자열의 수를 벗어나는 요소/글자를 선택할 때 발생</li> </ul> </li> </ol> <h4 id="6-문자열-길이-구하기--len문자열">6. 문자열 길이 구하기 : len("문자열")</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s">"안녕하세요"</span><span class="p">))</span>
+<span class="mi">5</span>
+</code></pre>  </div></div> <h2 id="-2--숫자">[ 2 ] 숫자</h2> <h4 id="1-숫자의-종류">1. 숫자의 종류</h4> <ol> <li>정수, 실수</li> </ol> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">52</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">int</span><span class="s">'&gt;
+&gt;&gt;&gt;print(type(52.344))
+&lt;class '</span><span class="nb">float</span><span class="s">'&gt;
+</span></code></pre>  </div></div> <h4 id="2-숫자-연산자">2. 숫자 연산자</h4> <ol> <li>사칙연산 : +, -, *, /</li> <li><strong>정수나누기 연산자 : //</strong></li> <li>나머지 연산자 : %</li> <li>제곱 연산자 : **</li> </ol> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="mf">1.5</span>
+<span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">27</span>
+</code></pre>  </div></div> <h4 id="3-typeerror-예외">3. TypeError 예외</h4> <ol> <li>서로 다른 자료를 연산하면 TypeError 예외 발생</li> </ol> <h2 id="-3--변수와-입력">[ 3 ] 변수와 입력</h2> <ul> <li>KEY: <code class="language-plaintext highlighter-rouge notranslate">#변수선언 #변수할당 #변수참조 #input() #int() #float() #str()</code>
+</li> <li>파이썬은 변수타입을 쓰지않음 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">'문자열'</span>
+</code></pre>  </div> </div> </li> </ul> <h4 id="3-1-복합-대입-연산자">3-1. 복합 대입 연산자</h4> <ol> <li>+=, -=, *=, /=, %=, **=</li> <li>문자열도 사용 가능</li> </ol> <h4 id="3-2-input">3-2. input()</h4> <ol> <li>사용자 입력 받는 함수</li> <li>프롬프트 문자열</li> <li>input() 은 무조건 문자열 타입을 반환</li> </ol> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">string</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"문자를 입력하세요:"</span><span class="p">)</span>
+<span class="n">문자를</span> <span class="n">입력하세요</span><span class="p">:</span><span class="n">문자</span>
+<span class="o">&gt;&gt;&gt;</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+<span class="o">&lt;</span> <span class="k">class</span> <span class="err">'</span><span class="nc">str</span><span class="s">' &gt;
+&gt;&gt;&gt;number = input("숫자를 입력하세요 :")
+숫자를 입력하세요 : 1234
+&gt;&gt;&gt;print(type(number))
+&lt; class '</span><span class="nb">str</span><span class="s">' &gt;
+# 불값도 마찬가지로 문자열을 반환
+</span></code></pre>  </div></div> <h4 id="3-3-문자열을-숫자로-바꾸기">3-3. 문자열을 숫자로 바꾸기</h4> <ol> <li>int()</li> <li>float()</li> <li>ValueError 예외 : 숫자가 아닌 것을 숫자로 변환 하려고 할 때 발생하는 에러, 실수를 int 형으로 변환하려고 할 때</li> </ol> <h4 id="3-4-숫자를-문자열로-바꾸기">3-4. 숫자를 문자열로 바꾸기</h4> <ol> <li>str()</li> </ol> <h2 id="-4--숫자와-문자열의-다양한-함수-및-기능">[ 4 ] 숫자와 문자열의 다양한 함수 및 기능</h2> <ul> <li>KEY: <code class="language-plaintext highlighter-rouge notranslate">#format() upper() lower() strip() find() in split()</code>
+</li> </ul> <h4 id="4-1-문자열의-format">4-1. 문자열의 format()</h4> <div class="language-python highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="s">"{}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="s">"{}과 {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="s">"{0},{1},{3}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">303</span><span class="p">)</span>
+</code></pre>  </div></div> <ol> <li>정수 출력의 다양한 쓰임 <ul> <li>정수 : <code class="language-plaintext highlighter-rouge notranslate">output_a = '{:d}'.format(52)</code>
+</li> <li>특정 칸에 출력 : <code class="language-plaintext highlighter-rouge notranslate">output_b="{:5d}".format(53)</code>
+</li> <li>빈칸을 0으로 채우기 : <code class="language-plaintext highlighter-rouge notranslate">output_b="{:05d}".format(52)</code>
+</li> <li>양수/음수 부호와 함께 출력 : <code class="language-plaintext highlighter-rouge notranslate">output_c="{:+d}".format(-52)</code> 또는 <code class="language-plaintext highlighter-rouge notranslate">output_c="{:+d}".format(52)</code>
+</li> <li>부호부분 빈칸으로 비우고 출력 : <code class="language-plaintext highlighter-rouge notranslate">output_d="{: d}".format(-52)</code> 또는 <code class="language-plaintext highlighter-rouge notranslate">output_d="{: d}".format(52)</code>
+</li> <li>부호와 빈칸을 조합 할 때 = 기호를 앞에 붙일 수 있음</li> <li>다양한 형태로 조합해 보기</li> </ul> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="c1"># 조합하기
+</span> <span class="n">output_h</span> <span class="o">=</span> <span class="s">"{:+5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 뒤로 밀기 : 양수
+</span> <span class="n">output_i</span> <span class="o">=</span> <span class="s">"{:+5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="o">-</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 뒤로 밀기 : 음수
+</span> <span class="n">output_j</span> <span class="o">=</span> <span class="s">"{:=+5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 앞으로 밀기 : 양수
+</span> <span class="n">output_k</span> <span class="o">=</span> <span class="s">"{:=+5d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="o">-</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 앞으로 밀기 : 음수
+</span> <span class="n">output_l</span> <span class="o">=</span> <span class="s">"{:+05d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 붙이고 0으로 채우기 : 양수
+</span> <span class="n">output_m</span> <span class="o">=</span> <span class="s">"{:+05d}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="o">-</span><span class="mi">52</span><span class="p">)</span> <span class="c1"># 기호를 붙이고 0으로 채우기 : 음수
+</span> <span class="k">print</span><span class="p">(</span><span class="n">output_h</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="n">output_i</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="n">output_j</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="n">output_k</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="n">output_l</span><span class="p">)</span>
+ <span class="k">print</span><span class="p">(</span><span class="n">output_m</span><span class="p">)</span>
+ <span class="c1"># 출력
+</span> <span class="o">+</span><span class="mi">52</span>
+ <span class="o">-</span><span class="mi">52</span>
+ <span class="o">+</span>  <span class="mi">52</span>
+ <span class="o">-</span>  <span class="mi">52</span>
+ <span class="o">+</span><span class="mi">0052</span>
+ <span class="o">-</span><span class="mi">0052</span>
+</code></pre>  </div> </div> </li> <li>부동 소수점 출력의 다양한 쓰임 <ul> <li>float의 기본형 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">output_a</span> <span class="o">=</span> <span class="s">"{:f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span> 
+<span class="n">output_b</span> <span class="o">=</span> <span class="s">"{:15f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span> <span class="c1"># 15칸 만들기
+</span><span class="n">output_c</span> <span class="o">=</span> <span class="s">"{:+15f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span> <span class="c1"># 15칸에 부호 추가
+</span><span class="n">output_d</span> <span class="o">=</span> <span class="s">"{:+015f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span> <span class="c1"># 15칸에 부호 추가하고 0으로 채우기
+</span><span class="k">print</span><span class="p">(</span><span class="n">output_a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_c</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_d</span><span class="p">)</span>
+<span class="c1"># 실행결과
+</span><span class="mf">52.273000</span>
+ <span class="mf">52.273000</span>
+ <span class="o">+</span><span class="mf">52.273000</span>
+<span class="o">+</span><span class="mf">0000052.273000</span>      
+</code></pre>  </div> </div> </li> <li>소수점 아래 지정하기 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">output_a</span> <span class="o">=</span> <span class="s">"{:15.3f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span> <span class="c1"># 총 15칸을 차지하고, 소수점 아래 3자리
+</span><span class="n">output_b</span> <span class="o">=</span> <span class="s">"{:15.2f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span>
+<span class="n">output_c</span> <span class="o">=</span> <span class="s">"{:15.1f}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="mf">52.273</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_c</span><span class="p">)</span>
+<span class="c1"># 실행결과
+</span>    <span class="mf">52.273</span>
+     <span class="mf">52.27</span>
+      <span class="mf">52.3</span>
+</code></pre>  </div> </div> </li> <li>의미없는 소수점 제거하기 : 소수점 아래 0 제거 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">output_a</span> <span class="o">=</span> <span class="mf">52.0</span>
+<span class="n">output_b</span> <span class="o">=</span> <span class="s">"{:g}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">output_a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output_b</span><span class="p">)</span>
+<span class="c1"># 실행결과
+</span><span class="mf">52.0</span>
+<span class="mi">52</span>
+</code></pre>  </div> </div> </li> </ul> </li> </ol> <h4 id="4-2-대소문자-바꾸기">4-2. 대소문자 바꾸기</h4> <ul> <li><strong>upper()</strong></li> <li>
+<strong>lower()</strong> <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="c1"># 실행결과
+</span><span class="n">HELLO</span>
+<span class="n">hello</span>
+</code></pre>  </div> </div> <h4 id="4-3-문자열-공백-제거">4-3. 문자열 공백 제거</h4> <ol> <li>양옆 공백 제거 : <strong>strip()</strong>
+</li> <li>왼쪽 공백 제거 : <strong>lstrip()</strong>
+</li> <li>오른쪽공백제거 : <strong>rstrip()</strong>
+</li> </ol> </li> </ul> <h4 id="4-4-문자열-구성-파악--isxx">4-4. 문자열 구성 파악 : isXX()</h4> <ol> <li>
+<strong>isalnum()</strong> : 문자열이 숫자와 알파벳으로만 구성되었는지</li> <li><strong>isalpha()</strong></li> <li>
+<strong>isdentifier()</strong> : 문자열이 식별자로 사용 할 수 있는지</li> <li><strong>isdecimal()</strong></li> <li><strong>isdigit()</strong></li> <li><strong>isspace()</strong></li> <li><strong>islower()</strong></li> <li><strong>isupper()</strong></li> </ol> <h4 id="4-5-문자열-찾기--find-rfind--0부터-시작">4-5. 문자열 찾기 : find(), rfind() ( 0부터 시작)</h4> <ol> <li>
+<strong>find()</strong> : 왼쪽부터 찾아서 처음 등작하는 위치</li> <li>
+<strong>rfind()</strong> : 오른쪽부터 찾아서 처음 등장하는 위치</li> </ol> <h4 id="4-6-문자열과-in-연산자">4-6. 문자열과 in 연산자</h4> <ol> <li>문자열 내부에 어떤 문자열이 있는지 확인</li> <li>결과는 <strong>불</strong>로 반환 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"안녕"</span> <span class="ow">in</span> <span class="s">"안녕하세요?"</span><span class="p">)</span>
+<span class="c1"># 실행 결과
+</span><span class="bp">True</span>
+</code></pre>  </div> </div> </li> </ol> <h4 id="4-7-문자열-자르기--split">4-7. 문자열 자르기 : split()</h4> <ul> <li>결과는 <strong>리스트</strong>로 반환 <div class="language-python highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"10 20 30 40 50"</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># 실행 결과
+</span><span class="p">[</span><span class="s">'10'</span><span class="p">,</span> <span class="s">'20'</span><span class="p">,</span> <span class="s">'30'</span><span class="p">,</span> <span class="s">'40'</span><span class="p">,</span> <span class="s">'50'</span><span class="p">]</span>
+</code></pre>  </div> </div> </li> </ul> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/python-grammar/gettingStart.html" class="btn" title="시작하기" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"><a href="/python-grammar/condition.html" class="btn" title="조건문" accesskey="n" rel="next"> Next <i class="fa fa-arrow-circle-right"></i> </a></div> </div>
+<hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020-2021,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/5cc140179f146dd0bc550ecf6d5afbb2e5a9c0c7" title="5cc140179f146dd0bc550ecf6d5afbb2e5a9c0c7" rel="noreferrer" target="_blank">5cc1401</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> jekyll-rtd-theme </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 6051 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="jekyll-rtd-theme">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>
