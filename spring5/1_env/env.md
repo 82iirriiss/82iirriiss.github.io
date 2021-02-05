@@ -6,6 +6,7 @@ sort: 1
 
 ## <font color='blue'>1. 개발 준비</font>
 - JDK 1.8 설치 (현재 2021년, 탐캣 9.x 버전이 jdk 1.8 기반임.)
+- `openJdk 11 이상 설치 해 보았으나, Servlet과의 호환성 문제 발생 및 정상빌드 되지 않음. jdk 1.8로 개발할 것.`
 - STS(Eclipse) 설치
 - 탐캣 설치 & 연동
 - 오라클 설치 & SQL Developer 설치
@@ -27,17 +28,16 @@ sort: 1
 - *JDK 설치*
 
 ```bash
-➜  jdk-15.0.2.jdk java --version
-openjdk 15.0.2 2021-01-19
-OpenJDK Runtime Environment (build 15.0.2+7-27)
-OpenJDK 64-Bit Server VM (build 15.0.2+7-27, mixed mode, sharing)
+java version "1.8.0_281"
+Java(TM) SE Runtime Environment (build 1.8.0_281-b09)
+Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)
 ```
 
 - *환경변수에 JAVA_HOME 추가 & PATH에 JAVA_HOME/bin 추가*
 
 ```bash
 $vim .zshrc
-JAVA_HOME=/Users/kim-yunmi/Library/java/JavaVirtualMachines/jdk-15.0.2.jdk
+JAVA_HOME=/Library/java/JavaVirtualMachines/jdk-1.8.0_281.jdk/Contents/Home
 export JAVA_HOME
 export PATH=$HOME/bin:${JAVA_HOME}/bin:$PATH
 # esc + :wq 로 저장
@@ -49,13 +49,13 @@ $source .zshrc
 
 - [ ] STS (Eclipse 기반의 스프링 개발 툴, Spring Tool Suit) 설치하는 방법
 - [x] Eclipse 설치 후 Spring 플러그인 설치하는 방법 : 경험자
-- 다운로드 : <https://www.eclipse.org/downloads/> 의 `Eclipse IDE for Enterprise Java Developers` 설치
+- 다운로드 : <https://www.eclipse.org/downloads/> 의 `Eclipse IDE for Enterprise Java Developers` 설치 (2020-06 버전 사용하였음. jdk 1.8 지원.)
 - Eclipse 실행환경 편집 ( /Applications/development/Eclipse.app/Contents/Eclipse/eclipse.ini) : jre의 환경설정을 jdk 로 변경(lombok등의 라이브러리 사용이 지장 받을 수 있음.)
 
 ```ini
 -vm
 ## ../Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_15.0.1.v20201027-0507/jre/lib/libjli.dylib
-/Users/kim-yunmi/Library/java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/MacOS/libjli.dylib
+/Library/java/JavaVirtualMachines/jdk-1.8.0_281.jdk/Contents/MacOS/libjli.dylib
 ```
 
 - Eclipse 의 workspace의 기본문자열 인코딩을 `utf-8`로 모두 변경 (아마 기본적으로 utf-8로 셋팅되어 있을 것이다.)
@@ -64,7 +64,7 @@ $source .zshrc
 Eclipse > Preferences > General > Workspace 에서 변경, Web의 HTML, JSP, CSS 도 변경
 ```
 
-- Eclipse 실행 후, `Preference`의 `Installed JRE`를 `openJdk-15`로 변경한다.
+- Eclipse 실행 후, `Preference`의 `Installed JRE`를 `jdk-1.8.0_281.jdk`로 변경한다.
 
 **(3) Eclipse 에 STS3 플러그인 설치 (STS4는, 스프링부트를 위한 툴)**
 
@@ -124,7 +124,7 @@ Eclipse > Preferences > General > Workspace 에서 변경, Web의 HTML, JSP, CSS
 ```xml
 # pom.xml
 <properties>
-    <java-version>1.6</java-version>
+    <java-version>1.8</java-version>
     <org.springframework-version>5.2.12.RELEASE</org.springframework-version>
     <org.aspectj-version>1.6.10</org.aspectj-version>
     <org.slf4j-version>1.6.6</org.slf4j-version>
@@ -136,8 +136,8 @@ Eclipse > Preferences > General > Workspace 에서 변경, Web의 HTML, JSP, CSS
 ![스프링 버전 변경](../../assets/images/spring_version_change.png)
 
 **(3) java 버전 변경하기**
-- JDK 1.6을 15 버전으로 변경한다.
-(내 PC에 jdk 15를 설치 하였기 때문.)
+- JDK 1.6을 1.8 버전으로 변경한다.
+(내 PC에 jdk 1.8 버전을 설치 하였기 때문.)
 
 ```xml
 <plugin>
@@ -145,8 +145,8 @@ Eclipse > Preferences > General > Workspace 에서 변경, Web의 HTML, JSP, CSS
     <artifactId>maven-compiler-plugin</artifactId>
     <version>2.5.1</version>
     <configuration>
-        <source>15.0.2</source>
-        <target>15.0.2</target>
+        <source>1.8</source>
+        <target>1.8</target>
         <compilerArgument>-Xlint:all</compilerArgument>
         <showWarnings>true</showWarnings>
         <showDeprecation>true</showDeprecation>
@@ -155,17 +155,43 @@ Eclipse > Preferences > General > Workspace 에서 변경, Web의 HTML, JSP, CSS
 ```
 
 - 프로젝트 우클릭 > Maven > Update Project
-- Package Explorer의 JRE SystemLibrary 내 라이브러리 버전이 모두 15.* 로 변경되었음을 확인한다.
+- Package Explorer의 JRE SystemLibrary 내 라이브러리 버전이 모두 1.8 로 변경되었음을 확인한다.
 
-**(4) 프로젝트 환경 구성 JDK 15 로 변경**
-- JRE SystemLibrary 우클릭  > Properties > Excution Environment 를 `JavaSE - 15` 로 변경하고 저장한다.
-- 프로젝트 우클릭 > `Project facets` > java 버전을 15로 변경
-- JRE SystemLibrary에 `JRE System Library[JavaSE-15]` 라고 보여져야 한다.
-**(5) 탐캣 설정**
+**(4) 프로젝트 환경 구성 JDK 1.8 로 변경**
+- 프로젝트 우클릭 > `Project facets` > java 버전을 1.8로 변경
+- 프로젝트 우클릭 > `java compile` > java 1.8 로 선택되어 있어야 한다.
+- JRE SystemLibrary에 `JRE System Library[jdk-1.8.0_281.jdk]` 라고 보여져야 한다.
+
+**(5) Servlet 버전 변경**
+- Spring Lagacy Project 로 생성한 프로젝트는 서블릿이 2.5로 되어 있으니, 이것을 3.0 이상으로 변경한다.
+- `서블릿 3.0 이상은 jdk 1.7 이상에서만 설정 할 수 있다. 그런데 11,15 등과 같은 버전은 에러가 발생하여 현재로써는 jdk 1.8로 설정하는 것이 최선이다.`
+- pom.xml 
+
+```xml
+<!-- Servlet -->
+<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>javax.servlet-api</artifactId>
+	<version>3.1.0</version>
+	<scope>provided</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+<dependency>
+	<groupId>javax.servlet.jsp</groupId>
+	<artifactId>javax.servlet.jsp-api</artifactId>
+	<version>2.3.3</version>
+	<scope>provided</scope>
+</dependency>
+```
+
+
+**(6) 탐캣 설정**
 
 - Window > Show View > Server 선택 : 하단에 Server 뷰가 보인다.
 - Server 뷰에서 '서버추가하기' 를 클릭하여 tomcat 서버를 추가한다. (서버추가하라는 영문이지...진짜 '서버추가하기'는 아님.)
-- 실제로는 tomcat 10.x 를 추가하였다. (그림과는 다름.)
+- 실제로는 tomcat 9.x 를 추가하였다. (jdk1.8을 지원하는 탐캣. 그림과는 다름.)
 
 ![탐캣 서버 추가](../../assets/images/add_tomcat.png)
 
@@ -193,6 +219,7 @@ $ java -jar lombok.jar
 - MacOS의 경우, Eclipse 는 `Applications/Eclipse.app` 의 위치에 있어야만 정상적으로 IDE를 인식한다. (Applications/다른폴더/Eclipse.app 일 때는, 인식하지 못함)
 - `install/Update` 하여 lombok 설치
 - 결과적으로, `/Applications/Eclipse.app/Contents/Eclipse/lombok.jar` 의 위치로 lombok.jar가 복사되었다.
+- 또는, Eclipse > Help > Install New SoftWare 에서 lombok의 저장소를 적고, 롬복을 설치해도 된다.
 
 ![lombok 설치](../../assets/images/install_lombok.png)
 
@@ -221,7 +248,7 @@ $ java -jar lombok.jar
 
 ```xml
 <properties>
-    <java-version>15.0.2</java-version>
+    <java-version>1.8</java-version>
     <org.springframework-version>5.2.12.RELEASE</org.springframework-version>
     <org.aspectj-version>1.6.10</org.aspectj-version>
     <org.slf4j-version>1.6.6</org.slf4j-version>
@@ -237,8 +264,8 @@ $ java -jar lombok.jar
     <artifactId>maven-compiler-plugin</artifactId>
     <version>2.5.1</version>
     <configuration>
-        <source>15.0.2</source>
-        <target>15.0.2</target>
+        <source>1.8</source>
+        <target>1.8</target>
         <compilerArgument>-Xlint:all</compilerArgument>
         <showWarnings>true</showWarnings>
         <showDeprecation>true</showDeprecation>
@@ -707,14 +734,14 @@ public class RootConfig {
 		HikariConfig config = new HikariConfig();
 		config.setJdbcUrl("jdbc:mysql://localhost:3306/testDb");
 		config.setUsername("book_ex");
-		config.setPassword("Tpdlfdl3278!");
+		config.setPassword("password");
 		config.addDataSourceProperty("serverTimezone", "UTC");
 		config.addDataSourceProperty("cachePrepStmts", "true");
 		config.addDataSourceProperty("prepStmtCacheSize", "250");
 		config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
-		HikariDataSource ds = new HikariDataSource(config);
-		return ds;
+		HikariDataSource dataSource = new HikariDataSource(config);
+		return dataSource;
 	}
 	
 	@Bean
@@ -837,7 +864,7 @@ public class RootConfig {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:mysql://localhost:3306/testDb");
         config.setUsername("book_ex");
-        config.setPassword("Tpdlfdl3278!");
+        config.setPassword("password");
         config.addDataSourceProperty("serverTimezone", "UTC");
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
@@ -1000,9 +1027,9 @@ public class TimeMapperTests {
 
 > `src/mian/resources` 밑에 `log4jdbc.log4j2.properties` 파일
 
-```properties
+```ini
 log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
-log4jdbc.auto.load.popular.drivers = false
+# log4jdbc.auto.load.popular.drivers = false
 ```
 -----------------------------------------------------------------------------------
 *<font color='green'>6-3. JDBC 연결정보 수정</font>*
@@ -1038,7 +1065,7 @@ public class RootConfig {
 		config.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/testDb");
 		//config.setJdbcUrl("jdbc:mysql://localhost:3306/testDb");
 		config.setUsername("book_ex");
-		config.setPassword("Tpdlfdl3278!");
+		config.setPassword("password");
 		config.addDataSourceProperty("serverTimezone", "UTC");
 		config.addDataSourceProperty("cachePrepStmts", "true");
 		config.addDataSourceProperty("prepStmtCacheSize", "250");
