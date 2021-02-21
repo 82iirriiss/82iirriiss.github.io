@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto"> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="화면 처리 BootStrap 이용 : https://startbootstrap.com/template-categories/all/ 1. 화면작업 사전 준비 1-1. 한글문제와 UTF-8 필터 처리 화면에서 한글 데이터를 보냈을 때, 웹 브라우저의 Network 콘..."> <meta name="revised" content="8127b0c003fdc0bf773688d88b2bd32c76ae6c20"> <meta name="author" content="82iirriiss"> <meta name="generator" content="jekyll-rtd-theme v2.0.10">
+<meta name="theme-color" content="#2980b9"> <title>화면 처리 · 윤미의 개발 블로그</title> <meta name="twitter:title" content="화면 처리 · 윤미의 개발 블로그"> <meta name="twitter:description" content="화면 처리 BootStrap 이용 : https://startbootstrap.com/template-categories/all/ 1. 화면작업 사전 준비 1-1. 한글문제와 UTF-8 필터 처리 화면에서 한글 데이터를 보냈을 때, 웹 브라우저의 Network 콘..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@82iirriiss"> <meta name="twitter:url" content="http://localhost:4000/spring5/3_webDev/7_ui.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="화면 처리 · 윤미의 개발 블로그"> <meta property="og:description" content="화면 처리 BootStrap 이용 : https://startbootstrap.com/template-categories/all/ 1. 화면작업 사전 준비 1-1. 한글문제와 UTF-8 필터 처리 화면에서 한글 데이터를 보냈을 때, 웹 브라우저의 Network 콘..."> <meta property="og:locale" content="en"> <meta property="og:url" content="http://localhost:4000/spring5/3_webDev/7_ui.html"> <meta property="og:type" content="article"> <meta property="article:author" content="82iirriiss"> <meta property="article:published_time" content="2020-12-14T13:31:15+09:00"> <meta property="article:modified_time" content="2021-02-22T01:15:38+09:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "http://localhost:4000/spring5/3_webDev/7_ui.html" }, "headline": "화면 처리 · 윤미의 개발 블로그", "image": [], "author": { "@type": "Person", "name": "82iirriiss" }, "datePublished": "2020-12-14T13:31:15+09:00", "dateModified": "2021-02-22T01:15:38+09:00", "publisher": { "@type": "User", "name": "82iirriiss", "logo": { "@type": "ImageObject", "url": "https://avatars.githubusercontent.com/u/59656683?v=4" } }, "description": "화면 처리 BootStrap 이용 : https://startbootstrap.com/template-categories/all/ 1. 화면작업 사전 준비 1-1. 한글문제와 UTF-8 필터 처리 화면에서 한글 데이터를 보냈을 때, 웹 브라우저의 Network 콘..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="prev" href="http://localhost:4000/spring5/3_webDev/6_presentation.html">
+<link rel="next" href="http://localhost:4000/spring5/3_webDev/8_paging.html">
+<link rel="canonical" href="http://localhost:4000/spring5/3_webDev/7_ui.html">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96">
+<link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css">
+<script> window.ui = { title: "윤미의 개발 블로그", baseurl: "", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container">
+<div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="개발을 위한 기술을 정리함"> <i class="fa fa-home"></i> 윤미의 개발 블로그 </a> </div> <span class="version"></span> <form class="search pt-2" action="/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python/"> Django &amp; Python </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/tip/"> python 코딩 Tip! </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/tip/tip.html">1. 파이썬 코딩 시, 알아야 할 꿀팁!</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/webStandardLibrary/"> 웹 표준 라이브러리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webClientLIbrary.html">1. 웹 클라이언트 라이브러리</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/webServerLibrary.html">2. 웹 서버 라이브러리</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/webStandardLibrary/CgiWsgiLibrary.html">3. CGI/WSGI 라이브러리</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebFramework/"> Django 웹 프레임워크 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoInstall.html">1. 장고 프로그램 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopmentPattern.html">2. 장고의 웹애플리케이션 개발 방식</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationArchithect.html">3. 프로젝트 뼈대 만들기</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/applicationDevelopment-Model.html">4. 애플리케이션 개발하기 - Model 코딩</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebFramework/jangoDevelopment-View_Templete.html">5. 애플리케이션 개발하기 - URLconf, View 및 Templete 코딩</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoCoreFunction/"> Django 핵심기능 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/decorateAdminSite.html">1. Admin 사이트 꾸미기</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/dataAlterbyPythonShell.html">2. 장고 파이썬 쉘로 데이터 조작하기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/templateSystem.html">3. 템플릿 시스템</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoForm.html">4. Django 의 폼 처리 기능</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoViewClass.html">5. 클래스 형 뷰</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoCoreFunction/DjangoLogging.html">6. 로그 남기기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/extendExampleProject/"> 실습예제 심화 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/extendExampleProject/addNewApplication.html">1. 새로운 애플리케이션 만들기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/DjangoWebServerConfig/"> Django 웹서버 연동원리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/wsgi_py_file.html">1. 장고의 wsgi.py 파일</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/DjangoWebServerConfig/jangoSettingCheckListInProductMode.html">2. 운영 서버 적용 전 장고의 설정 변경 사항</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/pythonAnyWhereCloudServerDeploy/"> Cloud (pythonanywhere) 서버에 Django 배포하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/pythonAnyWhereCloudServerDeploy/pythonanywhereDeploy.html">1. PythonAnyWhere에 장고소스 배포하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/ApacheWebServerDeploy/"> Apache 웹서버 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/ApacheWebServerDeploy/apacheWebServerDeploy.html">1. 아파치 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/NginxWebServerDeploy/"> NGINX 웹서버와 연동하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/NginxWebServerDeploy/nginxWebServerDeploy.html">1. NGINX 웹 서버와 연동</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/JangoDevelopmentBasic/"> 파이썬 가상환경 사용하기 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/JangoDevelopmentBasic/jangoBasic.html">1. 가상환경 사용하기</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/developBookmark/"> bookmark 앱 개발 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/1_design.html">1. 설계</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/2_makeBorn.html">2. 개발 뼈대 세우기</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/3_model.html">3. 모델 개발</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/4_URLconf.html">4. URLconf 개발</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/5_view.html">5. 뷰 개발</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/6_templates.html">6. 템플릿 개발</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBookmark/7_run.html">7. 결과물 확인</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/python/developBlog/"> bookmark 앱 개발 </a><ul> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/python/developBlog/7_tag.html">7. Blog앱에 태그 달기</a> </li>
+</ul> </li>
+</ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/python-grammar/"> 파이썬 기본문법 </a><ul> <li class="toc level-1 " data-sort="1" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/gettingStart.html">1. 시작하기</a> </li> <li class="toc level-1 " data-sort="2" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/dataType.html">2. 자료형</a> </li> <li class="toc level-1 " data-sort="3" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/condition.html">3. 조건문</a> </li> <li class="toc level-1 " data-sort="4" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/loop.html">4. 반복문</a> </li> <li class="toc level-1 " data-sort="5" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/function.html">5. 함수</a> </li> <li class="toc level-1 " data-sort="6" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/exeption.html">6. 예외처리</a> </li> <li class="toc level-1 " data-sort="7" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/module.html">7. 모듈</a> </li> <li class="toc level-1 " data-sort="8" data-level="1"> <a class="d-flex flex-items-baseline " href="/python-grammar/class.html">8. 클래스</a> </li>
+</ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/spring5/"> 스프링5 </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/1_env/"> 개발환경 구축 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/1_env/env.html">1. 스프링 개발환경 구축</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/1_env/di_lombok.html">2. 의존성 주입 / Lombok</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/2_mvc/"> 스프링 MVC 설정 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/2_mvc/architect.html">1. 스프링 MVC 기본 설정</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/2_mvc/controller.html">2. 스프링 MVC의 Controller</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/3_webDev/"> 게시판 개발 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/1_architect.html">1. 프로젝트 패키지 구성, 네이밍, 설계</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/2_xmlSetting.html">2. xml 을 이용한 프로젝트 뼈대 설정</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/3_javaSetting.html">3. Java Configuration 을 이용한 프로젝트 뼈대 설정</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/4_persistence.html">4. 영속계층(DB, Mapper) 구현</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/5_business.html">5. 비지니스 계층 (Service) 구현</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/6_presentation.html">6. 프레젠테이션 계층(Controller) 구현</a> </li> <li class="toc level-2 current" data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline current" href="/spring5/3_webDev/7_ui.html">7. 화면 처리</a> </li> <li class="toc level-2 " data-sort="8" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/8_paging.html">8. 페이징 처리</a> </li> <li class="toc level-2 " data-sort="9" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/9_search.html">9. 검색 처리</a> </li> <li class="toc level-2 " data-sort="11" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/3_webDev/11_test.html">11. 테스트</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/4_rest_ajsx_reply/"> REST 방식과 Ajax 를 이용하는 댓글 처리 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/4_rest_ajsx_reply/1_rest_anotation.html">1. REST 방식</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/4_rest_ajsx_reply/2_reply_example.html">2. Ajax 댓글 달기 예제</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/5_aop_transaction/"> AOP와 트랜젝션 </a><ul> </ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/6_fileUpload/"> 파일 업로드 처리 </a><ul> </ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/7_security/"> 스프링 웹 시큐리티 </a><ul> </ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/8_intellij_gradle/"> Intellij와 gradle을 이용하는 스프링 환경 구축 </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/8_intellij_gradle/1_install.html">1. 설치</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/8_intellij_gradle/2_project.html">2. 프로젝트 생성</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/9_QNA/"> Q &amp; A </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/9_QNA/1_annotation.html">1. 어노테이션</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/9_QNA/2_qna.html">2. Q&amp;A</a> </li>
+</ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/spring5/10_mybatis/"> MyBatis </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/spring5/10_mybatis/1_myBatis.html">1. 마이바티스 동적 SQL</a> </li>
+</ul> </li>
+</ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/">윤미의 개발 블로그</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="/" title="/"> <i class="fa fa-home"></i> </a> </li>
+<li class="breadcrumb-item"><a href="/spring5/">spring5</a></li>
+<li class="breadcrumb-item"><a href="/spring5/3_webDev/">3_webDev</a></li>
+<li class="breadcrumb-item" aria-current="page">7_ui.md</li>
+</ul> <a class="edit" href="https://github.com/82iirriiss/82iirriiss.github.io/edit/gh-pages/spring5/3_webDev/7_ui.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h1 id="화면-처리">화면 처리</h1> <ul> <li>BootStrap 이용 : <a href="https://startbootstrap.com/template-categories/all/">https://startbootstrap.com/template-categories/all/</a>
+</li> </ul> <h2 id="1-화면작업-사전-준비"><font color="blue">1. 화면작업 사전 준비</font></h2> <p><strong><font color="green" style="font-size:large;">1-1. 한글문제와 UTF-8 필터 처리</font></strong></p> <ol> <li>화면에서 한글 데이터를 보냈을 때, 웹 브라우저의 Network 콘솔에서 한글이 깨지지 않았고, 개발도구 콘솔에서 한글이 깨져서 보이면 아래와 같이 처리한다.</li> </ol> <ul> <li>XML 셋팅 : web.xml</li> </ul> <div class="language-xml highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code><span class="nt">&lt;filter&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>encoding<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;filter-class&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="nt">&lt;/filter-class&gt;</span>
+    <span class="nt">&lt;init-param&gt;</span>
+        <span class="nt">&lt;param-name&gt;</span>encoding<span class="nt">&lt;/param-name&gt;</span>
+        <span class="nt">&lt;param-value&gt;</span>UTF-8<span class="nt">&lt;/param-value&gt;</span>
+    <span class="nt">&lt;/init-param&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+
+<span class="nt">&lt;filter-mapping&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>encoding<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>appServlet<span class="nt">&lt;/servlet-name&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span>
+</code></pre>  </div></div> <ul> <li>Java 셋팅 : WebConfig.java 에 하기의 메소드 추가</li> </ul> <div class="language-java highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="nc">Filter</span><span class="o">[]</span> <span class="nf">getServletFilters</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+		<span class="nc">CharacterEncodingFilter</span> <span class="n">characterEncodingFilter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CharacterEncodingFilter</span><span class="o">();</span>
+		<span class="n">characterEncodingFilter</span><span class="o">.</span><span class="na">setEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+		<span class="n">characterEncodingFilter</span><span class="o">.</span><span class="na">setForceEncoding</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+		
+		<span class="k">return</span> <span class="k">new</span> <span class="nc">Filter</span><span class="o">[]</span> <span class="o">{</span><span class="n">characterEncodingFilter</span><span class="o">};</span>
+	<span class="o">}</span>
+</code></pre>  </div></div> <p><strong><font color="green" style="font-size:large;">1-2. Bootstrap, 프로젝트에 적용하기</font></strong></p> <ol> <li>다운로드 : <a href="https://startbootstrap.com/templates">https://startbootstrap.com/templates</a>
+</li> <li>
+<code class="language-plaintext highlighter-rouge notranslate">SB Admin</code> 다운로드</li> <li>
+<code class="language-plaintext highlighter-rouge notranslate">/Users/kim-yunmi/eclipse-workspace/ex02/src/main/webapp/resources</code> 하위에 다운로드 받은 템플릿 파일을 저장한다.</li> <li> <p>기본적인 <code class="language-plaintext highlighter-rouge notranslate">list.jsp</code> 를 <code class="language-plaintext highlighter-rouge notranslate">views/board/</code> 경로에 아래와 같이 만든다.</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;title&gt;</span>Insert title here<span class="nt">&lt;/title&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+ <span class="nt">&lt;h1&gt;</span>List Page<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre>  </div> </div> </li> <li>탐캣의 contextRoot를 ‘/'로 변경하고, 서버를 시작한다.</li> <li>
+<code class="language-plaintext highlighter-rouge notranslate">http://localhost:8080/board/list</code> 를 호출하고 (4)에서 생성한 list.jsp 페이지가 문제없이 뜨는 것을 확인한다.</li> <li>이제 bootstrap의 스타일을 list.jsp 에 적용한다. <ul> <li>&lt;html lang="en"&gt; ~ &lt;/html&gt; 까지의 SB Admin2 tables.html 소스를 list.jsp에 복사한다.</li> <li>css, js, img 폴더의 경로를 <code class="language-plaintext highlighter-rouge notranslate">/resources/</code>로 시작하도록 변경한다.</li> </ul> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
+ <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+ <span class="nt">&lt;head&gt;</span>
+
+ <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+ <span class="nt">&lt;title&gt;</span>SB Admin 2 - Tables<span class="nt">&lt;/title&gt;</span>
+
+ <span class="c">&lt;!-- Custom fonts for this template --&gt;</span>
+ <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/vendor/fontawesome-free/css/all.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;link</span>
+     <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"</span>
+     <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+ <span class="c">&lt;!-- Custom styles for this template --&gt;</span>
+ <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/css/sb-admin-2.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+ <span class="c">&lt;!-- Custom styles for this page --&gt;</span>
+ <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/vendor/datatables/dataTables.bootstrap4.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+ <span class="nt">&lt;/head&gt;</span>
+
+ <span class="nt">&lt;body</span> <span class="na">id=</span><span class="s">"page-top"</span><span class="nt">&gt;</span>
+
+ <span class="c">&lt;!-- Page Wrapper --&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+     <span class="c">&lt;!-- Sidebar --&gt;</span>
+     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"</span> <span class="na">id=</span><span class="s">"accordionSidebar"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Sidebar - Brand --&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"sidebar-brand d-flex align-items-center justify-content-center"</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-brand-icon rotate-n-15"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-laugh-wink"</span><span class="nt">&gt;&lt;/i&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-brand-text mx-3"</span><span class="nt">&gt;</span>SB Admin <span class="nt">&lt;sup&gt;</span>2<span class="nt">&lt;/sup&gt;&lt;/div&gt;</span>
+         <span class="nt">&lt;/a&gt;</span>
+
+         <span class="c">&lt;!-- Divider --&gt;</span>
+         <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider my-0"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Dashboard --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-tachometer-alt"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Dashboard<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Divider --&gt;</span>
+         <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Heading --&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-heading"</span><span class="nt">&gt;</span>
+             Interface
+         <span class="nt">&lt;/div&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Pages Collapse Menu --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapseTwo"</span>
+                 <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapseTwo"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-cog"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Components<span class="nt">&lt;/span&gt;</span>
+             <span class="nt">&lt;/a&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseTwo"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingTwo"</span> <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Custom Components:<span class="nt">&lt;/h6&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"buttons.html"</span><span class="nt">&gt;</span>Buttons<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"cards.html"</span><span class="nt">&gt;</span>Cards<span class="nt">&lt;/a&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Utilities Collapse Menu --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapseUtilities"</span>
+                 <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapseUtilities"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-wrench"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Utilities<span class="nt">&lt;/span&gt;</span>
+             <span class="nt">&lt;/a&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseUtilities"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingUtilities"</span>
+                 <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Custom Utilities:<span class="nt">&lt;/h6&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-color.html"</span><span class="nt">&gt;</span>Colors<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-border.html"</span><span class="nt">&gt;</span>Borders<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-animation.html"</span><span class="nt">&gt;</span>Animations<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-other.html"</span><span class="nt">&gt;</span>Other<span class="nt">&lt;/a&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Divider --&gt;</span>
+         <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Heading --&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-heading"</span><span class="nt">&gt;</span>
+             Addons
+         <span class="nt">&lt;/div&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Pages Collapse Menu --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapsePages"</span>
+                 <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapsePages"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-folder"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Pages<span class="nt">&lt;/span&gt;</span>
+             <span class="nt">&lt;/a&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapsePages"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingPages"</span> <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Login Screens:<span class="nt">&lt;/h6&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"login.html"</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"register.html"</span><span class="nt">&gt;</span>Register<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"forgot-password.html"</span><span class="nt">&gt;</span>Forgot Password<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Other Pages:<span class="nt">&lt;/h6&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"404.html"</span><span class="nt">&gt;</span>404 Page<span class="nt">&lt;/a&gt;</span>
+                     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"blank.html"</span><span class="nt">&gt;</span>Blank Page<span class="nt">&lt;/a&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Charts --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"charts.html"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-chart-area"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Charts<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Nav Item - Tables --&gt;</span>
+         <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"tables.html"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-table"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                 <span class="nt">&lt;span&gt;</span>Tables<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+         <span class="nt">&lt;/li&gt;</span>
+
+         <span class="c">&lt;!-- Divider --&gt;</span>
+         <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider d-none d-md-block"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Sidebar Toggler (Sidebar) --&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center d-none d-md-inline"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"rounded-circle border-0"</span> <span class="na">id=</span><span class="s">"sidebarToggle"</span><span class="nt">&gt;&lt;/button&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+
+     <span class="nt">&lt;/ul&gt;</span>
+     <span class="c">&lt;!-- End of Sidebar --&gt;</span>
+
+     <span class="c">&lt;!-- Content Wrapper --&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content-wrapper"</span> <span class="na">class=</span><span class="s">"d-flex flex-column"</span><span class="nt">&gt;</span>
+
+         <span class="c">&lt;!-- Main Content --&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+
+             <span class="c">&lt;!-- Topbar --&gt;</span>
+             <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"</span><span class="nt">&gt;</span>
+
+                 <span class="c">&lt;!-- Sidebar Toggle (Topbar) --&gt;</span>
+                 <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"sidebarToggleTop"</span> <span class="na">class=</span><span class="s">"btn btn-link d-md-none rounded-circle mr-3"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-bars"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                     <span class="nt">&lt;/button&gt;</span>
+                 <span class="nt">&lt;/form&gt;</span>
+
+                 <span class="c">&lt;!-- Topbar Search --&gt;</span>
+                 <span class="nt">&lt;form</span>
+                     <span class="na">class=</span><span class="s">"d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control bg-light border-0 small"</span> <span class="na">placeholder=</span><span class="s">"Search for..."</span>
+                             <span class="na">aria-label=</span><span class="s">"Search"</span> <span class="na">aria-describedby=</span><span class="s">"basic-addon2"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-sm"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                             <span class="nt">&lt;/button&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                 <span class="nt">&lt;/form&gt;</span>
+
+                 <span class="c">&lt;!-- Topbar Navbar --&gt;</span>
+                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav ml-auto"</span><span class="nt">&gt;</span>
+
+                     <span class="c">&lt;!-- Nav Item - Search Dropdown (Visible Only XS) --&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow d-sm-none"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"searchDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                             <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                         <span class="nt">&lt;/a&gt;</span>
+                         <span class="c">&lt;!-- Dropdown - Messages --&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"</span>
+                             <span class="na">aria-labelledby=</span><span class="s">"searchDropdown"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline mr-auto w-100 navbar-search"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control bg-light border-0 small"</span>
+                                         <span class="na">placeholder=</span><span class="s">"Search for..."</span> <span class="na">aria-label=</span><span class="s">"Search"</span>
+                                         <span class="na">aria-describedby=</span><span class="s">"basic-addon2"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
+                                         <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                                             <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-sm"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                         <span class="nt">&lt;/button&gt;</span>
+                                     <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/form&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/li&gt;</span>
+
+                     <span class="c">&lt;!-- Nav Item - Alerts --&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow mx-1"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"alertsDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                             <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-bell fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                             <span class="c">&lt;!-- Counter - Alerts --&gt;</span>
+                             <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger badge-counter"</span><span class="nt">&gt;</span>3+<span class="nt">&lt;/span&gt;</span>
+                         <span class="nt">&lt;/a&gt;</span>
+                         <span class="c">&lt;!-- Dropdown - Alerts --&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                             <span class="na">aria-labelledby=</span><span class="s">"alertsDropdown"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>
+                                 Alerts Center
+                             <span class="nt">&lt;/h6&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-primary"</span><span class="nt">&gt;</span>
+                                         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-file-alt text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                     <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 12, 2019<span class="nt">&lt;/div&gt;</span>
+                                     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"font-weight-bold"</span><span class="nt">&gt;</span>A new monthly report is ready to download!<span class="nt">&lt;/span&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-success"</span><span class="nt">&gt;</span>
+                                         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-donate text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                     <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 7, 2019<span class="nt">&lt;/div&gt;</span>
+                                     $290.29 has been deposited into your account!
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-warning"</span><span class="nt">&gt;</span>
+                                         <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-exclamation-triangle text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                     <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 2, 2019<span class="nt">&lt;/div&gt;</span>
+                                     Spending Alert: We've noticed unusually high spending for your account.
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item text-center small text-gray-500"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Show All Alerts<span class="nt">&lt;/a&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/li&gt;</span>
+
+                     <span class="c">&lt;!-- Nav Item - Messages --&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow mx-1"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"messagesDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                             <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-envelope fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                             <span class="c">&lt;!-- Counter - Messages --&gt;</span>
+                             <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger badge-counter"</span><span class="nt">&gt;</span>7<span class="nt">&lt;/span&gt;</span>
+                         <span class="nt">&lt;/a&gt;</span>
+                         <span class="c">&lt;!-- Dropdown - Messages --&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                             <span class="na">aria-labelledby=</span><span class="s">"messagesDropdown"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>
+                                 Message Center
+                             <span class="nt">&lt;/h6&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_1.svg"</span>
+                                         <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-success"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"font-weight-bold"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Hi there! I am wondering if you can help me with a
+                                         problem I've been having.<span class="nt">&lt;/div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Emily Fowler · 58m<span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_2.svg"</span>
+                                         <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>I have the photos that you ordered last month, how
+                                         would you like them sent to you?<span class="nt">&lt;/div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Jae Chun · 1d<span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_3.svg"</span>
+                                         <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-warning"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Last month's report looks great, I am very happy with
+                                         the progress so far, keep up the good work!<span class="nt">&lt;/div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Morgan Alvarez · 2d<span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"https://source.unsplash.com/Mv9hjnEUHR4/60x60"</span>
+                                         <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-success"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Am I a good boy? The reason I ask is because someone
+                                         told me that people say this to all dogs, even if they aren't good...<span class="nt">&lt;/div&gt;</span>
+                                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Chicken the Dog · 2w<span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item text-center small text-gray-500"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Read More Messages<span class="nt">&lt;/a&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/li&gt;</span>
+
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"topbar-divider d-none d-sm-block"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+                     <span class="c">&lt;!-- Nav Item - User Information --&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"userDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                             <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mr-2 d-none d-lg-inline text-gray-600 small"</span><span class="nt">&gt;</span>Douglas McGee<span class="nt">&lt;/span&gt;</span>
+                             <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-profile rounded-circle"</span>
+                                 <span class="na">src=</span><span class="s">"/resources/img/undraw_profile.svg"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;/a&gt;</span>
+                         <span class="c">&lt;!-- Dropdown - User Information --&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                             <span class="na">aria-labelledby=</span><span class="s">"userDropdown"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-user fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                 Profile
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                 Settings
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-list fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                 Activity Log
+                             <span class="nt">&lt;/a&gt;</span>
+                             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                             <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">"#logoutModal"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                 Logout
+                             <span class="nt">&lt;/a&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/li&gt;</span>
+
+                 <span class="nt">&lt;/ul&gt;</span>
+
+             <span class="nt">&lt;/nav&gt;</span>
+             <span class="c">&lt;!-- End of Topbar --&gt;</span>
+
+             <span class="c">&lt;!-- Begin Page Content --&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+
+                 <span class="c">&lt;!-- Page Heading --&gt;</span>
+                 <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-2 text-gray-800"</span><span class="nt">&gt;</span>Tables<span class="nt">&lt;/h1&gt;</span>
+                 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"mb-4"</span><span class="nt">&gt;</span>DataTables is a third party plugin that is used to generate the demo table below.
+                     For more information about DataTables, please visit the <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span>
+                         <span class="na">href=</span><span class="s">"https://datatables.net"</span><span class="nt">&gt;</span>official DataTables documentation<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+                 <span class="c">&lt;!-- DataTales Example --&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card shadow mb-4"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header py-3"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"m-0 font-weight-bold text-primary"</span><span class="nt">&gt;</span>DataTables Example<span class="nt">&lt;/h6&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-responsive"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span> <span class="na">id=</span><span class="s">"dataTable"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">cellspacing=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;thead&gt;</span>
+                                     <span class="nt">&lt;tr&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Office<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Start date<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Salary<span class="nt">&lt;/th&gt;</span>
+                                     <span class="nt">&lt;/tr&gt;</span>
+                                 <span class="nt">&lt;/thead&gt;</span>
+                                 <span class="nt">&lt;tfoot&gt;</span>
+                                     <span class="nt">&lt;tr&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Office<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Start date<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;th&gt;</span>Salary<span class="nt">&lt;/th&gt;</span>
+                                     <span class="nt">&lt;/tr&gt;</span>
+                                 <span class="nt">&lt;/tfoot&gt;</span>
+                                 <span class="nt">&lt;tbody&gt;</span>
+                                     <span class="nt">&lt;tr&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>Tiger Nixon<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>System Architect<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>Edinburgh<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>61<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>2011/04/25<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;td&gt;</span>$320,800<span class="nt">&lt;/td&gt;</span>
+                                     <span class="nt">&lt;/tr&gt;</span>
+                                 <span class="nt">&lt;/tbody&gt;</span>
+                             <span class="nt">&lt;/table&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+
+             <span class="nt">&lt;/div&gt;</span>
+             <span class="c">&lt;!-- /.container-fluid --&gt;</span>
+
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="c">&lt;!-- End of Main Content --&gt;</span>
+
+         <span class="c">&lt;!-- Footer --&gt;</span>
+         <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"sticky-footer bg-white"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container my-auto"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"copyright text-center my-auto"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;span&gt;</span>Copyright <span class="ni">&amp;copy;</span> Your Website 2020<span class="nt">&lt;/span&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/footer&gt;</span>
+         <span class="c">&lt;!-- End of Footer --&gt;</span>
+
+     <span class="nt">&lt;/div&gt;</span>
+     <span class="c">&lt;!-- End of Content Wrapper --&gt;</span>
+
+ <span class="nt">&lt;/div&gt;</span>
+ <span class="c">&lt;!-- End of Page Wrapper --&gt;</span>
+
+ <span class="c">&lt;!-- Scroll to Top Button--&gt;</span>
+ <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"scroll-to-top rounded"</span> <span class="na">href=</span><span class="s">"#page-top"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-angle-up"</span><span class="nt">&gt;&lt;/i&gt;</span>
+ <span class="nt">&lt;/a&gt;</span>
+
+ <span class="c">&lt;!-- Logout Modal--&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade"</span> <span class="na">id=</span><span class="s">"logoutModal"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"exampleModalLabel"</span>
+     <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-dialog"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-header"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"modal-title"</span> <span class="na">id=</span><span class="s">"exampleModalLabel"</span><span class="nt">&gt;</span>Ready to Leave?<span class="nt">&lt;/h5&gt;</span>
+                 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-dismiss=</span><span class="s">"modal"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/span&gt;</span>
+                 <span class="nt">&lt;/button&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-body"</span><span class="nt">&gt;</span>Select "Logout" below if you are ready to end your current session.<span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-footer"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-dismiss=</span><span class="s">"modal"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+                 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">href=</span><span class="s">"login.html"</span><span class="nt">&gt;</span>Logout<span class="nt">&lt;/a&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+
+ <span class="c">&lt;!-- Bootstrap core JavaScript--&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/jquery/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+ <span class="c">&lt;!-- Core plugin JavaScript--&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/jquery-easing/jquery.easing.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+ <span class="c">&lt;!-- Custom scripts for all pages--&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/js/sb-admin-2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+ <span class="c">&lt;!-- Page level plugins --&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/datatables/jquery.dataTables.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/datatables/dataTables.bootstrap4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+ <span class="c">&lt;!-- Page level custom scripts --&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/js/demo/datatables-demo.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+ <span class="nt">&lt;/body&gt;</span>
+
+ <span class="nt">&lt;/html&gt;</span>
+</code></pre>  </div> </div> </li> </ol> <p><strong><font color="green" style="font-size:large;">1-3. 페이지 include</font></strong></p> <ol> <li>‘Begin of Page Wrapper' 부분 부터 ‘End of Page Wrapper' 만 list.jsp 에 남겨두고 윗부분은 /views/includes/header.jsp 로, 아랫 부분은 /views/includes/footer.jsp 로 코드를 이동한다.</li> <li>list.jsp 의 윗 부분에 header.jsp 를, 아랫 부분에 footer.jsp 를 include 한다. <ul> <li>list.jsp</li> </ul> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/header.jsp"</span> <span class="nt">%&gt;</span>
+                 <span class="c">&lt;!-- Begin Page Content --&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+                     <span class="c">&lt;!-- Page Heading --&gt;</span>
+                     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-2 text-gray-800"</span><span class="nt">&gt;</span>Tables<span class="nt">&lt;/h1&gt;</span>
+                     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"mb-4"</span><span class="nt">&gt;</span>DataTables is a third party plugin that is used to generate the demo table below.
+                         For more information about DataTables, please visit the <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span>
+                             <span class="na">href=</span><span class="s">"https://datatables.net"</span><span class="nt">&gt;</span>official DataTables documentation<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+                     <span class="c">&lt;!-- DataTales Example --&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card shadow mb-4"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header py-3"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"m-0 font-weight-bold text-primary"</span><span class="nt">&gt;</span>DataTables Example<span class="nt">&lt;/h6&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-responsive"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span> <span class="na">id=</span><span class="s">"dataTable"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">cellspacing=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;thead&gt;</span>
+                                         <span class="nt">&lt;tr&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Office<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Start date<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Salary<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;/tr&gt;</span>
+                                     <span class="nt">&lt;/thead&gt;</span>
+                                     <span class="nt">&lt;tfoot&gt;</span>
+                                         <span class="nt">&lt;tr&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Position<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Office<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Start date<span class="nt">&lt;/th&gt;</span>
+                                             <span class="nt">&lt;th&gt;</span>Salary<span class="nt">&lt;/th&gt;</span>
+                                         <span class="nt">&lt;/tr&gt;</span>
+                                     <span class="nt">&lt;/tfoot&gt;</span>
+                                     <span class="nt">&lt;tbody&gt;</span>
+                                         <span class="nt">&lt;tr&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>Tiger Nixon<span class="nt">&lt;/td&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>System Architect<span class="nt">&lt;/td&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>Edinburgh<span class="nt">&lt;/td&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>61<span class="nt">&lt;/td&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>2011/04/25<span class="nt">&lt;/td&gt;</span>
+                                             <span class="nt">&lt;td&gt;</span>$320,800<span class="nt">&lt;/td&gt;</span>
+                                         <span class="nt">&lt;/tr&gt;</span>
+                                     <span class="nt">&lt;/tbody&gt;</span>
+                                 <span class="nt">&lt;/table&gt;</span>
+                             <span class="nt">&lt;/div&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+
+                 <span class="nt">&lt;/div&gt;</span>
+                 <span class="c">&lt;!-- /.container-fluid --&gt;</span>
+
+             <span class="nt">&lt;/div&gt;</span>
+             <span class="c">&lt;!-- End of Main Content --&gt;</span>
+         <span class="c">&lt;!-- End of Content Wrapper --&gt;</span>
+
+     <span class="nt">&lt;/div&gt;</span>
+        
+     <span class="c">&lt;!-- End of Page Wrapper --&gt;</span>
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/footer.jsp"</span> <span class="nt">%&gt;</span>   
+</code></pre>  </div> </div> </li> </ol> <ul> <li> <p>header.jsp</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>  <span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;head&gt;</span>
+
+      <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;title&gt;</span>/board/list.jsp<span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;script
+          </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.5.1.min.js"</span>
+          <span class="na">integrity=</span><span class="s">"sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="</span>
+          <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+      <span class="c">&lt;!-- Custom fonts for this template --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/vendor/fontawesome-free/css/all.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;link</span>
+          <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"</span>
+          <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+      <span class="c">&lt;!-- Custom styles for this template --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/css/sb-admin-2.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+      <span class="c">&lt;!-- Custom styles for this page --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/resources/vendor/datatables/dataTables.bootstrap4.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body</span> <span class="na">id=</span><span class="s">"page-top"</span><span class="nt">&gt;</span>
+
+      <span class="c">&lt;!-- Page Wrapper --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+          <span class="c">&lt;!-- Sidebar --&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"</span> <span class="na">id=</span><span class="s">"accordionSidebar"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Sidebar - Brand --&gt;</span>
+              <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"sidebar-brand d-flex align-items-center justify-content-center"</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-brand-icon rotate-n-15"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-laugh-wink"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-brand-text mx-3"</span><span class="nt">&gt;</span>SB Admin <span class="nt">&lt;sup&gt;</span>2<span class="nt">&lt;/sup&gt;&lt;/div&gt;</span>
+              <span class="nt">&lt;/a&gt;</span>
+
+              <span class="c">&lt;!-- Divider --&gt;</span>
+              <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider my-0"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Dashboard --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-tachometer-alt"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Dashboard<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Divider --&gt;</span>
+              <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Heading --&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-heading"</span><span class="nt">&gt;</span>
+                  Interface
+              <span class="nt">&lt;/div&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Pages Collapse Menu --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapseTwo"</span>
+                      <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapseTwo"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-cog"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Components<span class="nt">&lt;/span&gt;</span>
+                  <span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseTwo"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingTwo"</span> <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Custom Components:<span class="nt">&lt;/h6&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"buttons.html"</span><span class="nt">&gt;</span>Buttons<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"cards.html"</span><span class="nt">&gt;</span>Cards<span class="nt">&lt;/a&gt;</span>
+                      <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Utilities Collapse Menu --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapseUtilities"</span>
+                      <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapseUtilities"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-wrench"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Utilities<span class="nt">&lt;/span&gt;</span>
+                  <span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapseUtilities"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingUtilities"</span>
+                      <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Custom Utilities:<span class="nt">&lt;/h6&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-color.html"</span><span class="nt">&gt;</span>Colors<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-border.html"</span><span class="nt">&gt;</span>Borders<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-animation.html"</span><span class="nt">&gt;</span>Animations<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"utilities-other.html"</span><span class="nt">&gt;</span>Other<span class="nt">&lt;/a&gt;</span>
+                      <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Divider --&gt;</span>
+              <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Heading --&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar-heading"</span><span class="nt">&gt;</span>
+                  Addons
+              <span class="nt">&lt;/div&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Pages Collapse Menu --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link collapsed"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#collapsePages"</span>
+                      <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"collapsePages"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-folder"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Pages<span class="nt">&lt;/span&gt;</span>
+                  <span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"collapsePages"</span> <span class="na">class=</span><span class="s">"collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"headingPages"</span> <span class="na">data-parent=</span><span class="s">"#accordionSidebar"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-white py-2 collapse-inner rounded"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Login Screens:<span class="nt">&lt;/h6&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"login.html"</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"register.html"</span><span class="nt">&gt;</span>Register<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"forgot-password.html"</span><span class="nt">&gt;</span>Forgot Password<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                          <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"collapse-header"</span><span class="nt">&gt;</span>Other Pages:<span class="nt">&lt;/h6&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"404.html"</span><span class="nt">&gt;</span>404 Page<span class="nt">&lt;/a&gt;</span>
+                          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"collapse-item"</span> <span class="na">href=</span><span class="s">"blank.html"</span><span class="nt">&gt;</span>Blank Page<span class="nt">&lt;/a&gt;</span>
+                      <span class="nt">&lt;/div&gt;</span>
+                  <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Charts --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"charts.html"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-chart-area"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Charts<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Nav Item - Tables --&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"tables.html"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-table"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                      <span class="nt">&lt;span&gt;</span>Tables<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+
+              <span class="c">&lt;!-- Divider --&gt;</span>
+              <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">"sidebar-divider d-none d-md-block"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Sidebar Toggler (Sidebar) --&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center d-none d-md-inline"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"rounded-circle border-0"</span> <span class="na">id=</span><span class="s">"sidebarToggle"</span><span class="nt">&gt;&lt;/button&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;/ul&gt;</span>
+          <span class="c">&lt;!-- End of Sidebar --&gt;</span>
+            
+          <span class="c">&lt;!-- Content Wrapper --&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content-wrapper"</span> <span class="na">class=</span><span class="s">"d-flex flex-column"</span><span class="nt">&gt;</span>
+
+              <span class="c">&lt;!-- Main Content --&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+
+                  <span class="c">&lt;!-- Topbar --&gt;</span>
+                  <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"</span><span class="nt">&gt;</span>
+
+                      <span class="c">&lt;!-- Sidebar Toggle (Topbar) --&gt;</span>
+                      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"sidebarToggleTop"</span> <span class="na">class=</span><span class="s">"btn btn-link d-md-none rounded-circle mr-3"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-bars"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                          <span class="nt">&lt;/button&gt;</span>
+                      <span class="nt">&lt;/form&gt;</span>
+
+                      <span class="c">&lt;!-- Topbar Search --&gt;</span>
+                      <span class="nt">&lt;form</span>
+                          <span class="na">class=</span><span class="s">"d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control bg-light border-0 small"</span> <span class="na">placeholder=</span><span class="s">"Search for..."</span>
+                                  <span class="na">aria-label=</span><span class="s">"Search"</span> <span class="na">aria-describedby=</span><span class="s">"basic-addon2"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-sm"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                  <span class="nt">&lt;/button&gt;</span>
+                              <span class="nt">&lt;/div&gt;</span>
+                          <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/form&gt;</span>
+
+                      <span class="c">&lt;!-- Topbar Navbar --&gt;</span>
+                      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav ml-auto"</span><span class="nt">&gt;</span>
+
+                          <span class="c">&lt;!-- Nav Item - Search Dropdown (Visible Only XS) --&gt;</span>
+                          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow d-sm-none"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"searchDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                                  <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                              <span class="nt">&lt;/a&gt;</span>
+                              <span class="c">&lt;!-- Dropdown - Messages --&gt;</span>
+                              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"</span>
+                                  <span class="na">aria-labelledby=</span><span class="s">"searchDropdown"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline mr-auto w-100 navbar-search"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control bg-light border-0 small"</span>
+                                              <span class="na">placeholder=</span><span class="s">"Search for..."</span> <span class="na">aria-label=</span><span class="s">"Search"</span>
+                                              <span class="na">aria-describedby=</span><span class="s">"basic-addon2"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-append"</span><span class="nt">&gt;</span>
+                                              <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                                                  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-search fa-sm"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                              <span class="nt">&lt;/button&gt;</span>
+                                          <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/form&gt;</span>
+                              <span class="nt">&lt;/div&gt;</span>
+                          <span class="nt">&lt;/li&gt;</span>
+
+                          <span class="c">&lt;!-- Nav Item - Alerts --&gt;</span>
+                          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow mx-1"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"alertsDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                                  <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-bell fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                  <span class="c">&lt;!-- Counter - Alerts --&gt;</span>
+                                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger badge-counter"</span><span class="nt">&gt;</span>3+<span class="nt">&lt;/span&gt;</span>
+                              <span class="nt">&lt;/a&gt;</span>
+                              <span class="c">&lt;!-- Dropdown - Alerts --&gt;</span>
+                              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                                  <span class="na">aria-labelledby=</span><span class="s">"alertsDropdown"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>
+                                      Alerts Center
+                                  <span class="nt">&lt;/h6&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-primary"</span><span class="nt">&gt;</span>
+                                              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-file-alt text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                          <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 12, 2019<span class="nt">&lt;/div&gt;</span>
+                                          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"font-weight-bold"</span><span class="nt">&gt;</span>A new monthly report is ready to download!<span class="nt">&lt;/span&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-success"</span><span class="nt">&gt;</span>
+                                              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-donate text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                          <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 7, 2019<span class="nt">&lt;/div&gt;</span>
+                                          $290.29 has been deposited into your account!
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"icon-circle bg-warning"</span><span class="nt">&gt;</span>
+                                              <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-exclamation-triangle text-white"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                          <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>December 2, 2019<span class="nt">&lt;/div&gt;</span>
+                                          Spending Alert: We've noticed unusually high spending for your account.
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item text-center small text-gray-500"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Show All Alerts<span class="nt">&lt;/a&gt;</span>
+                              <span class="nt">&lt;/div&gt;</span>
+                          <span class="nt">&lt;/li&gt;</span>
+
+                          <span class="c">&lt;!-- Nav Item - Messages --&gt;</span>
+                          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow mx-1"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"messagesDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                                  <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-envelope fa-fw"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                  <span class="c">&lt;!-- Counter - Messages --&gt;</span>
+                                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger badge-counter"</span><span class="nt">&gt;</span>7<span class="nt">&lt;/span&gt;</span>
+                              <span class="nt">&lt;/a&gt;</span>
+                              <span class="c">&lt;!-- Dropdown - Messages --&gt;</span>
+                              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                                  <span class="na">aria-labelledby=</span><span class="s">"messagesDropdown"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"dropdown-header"</span><span class="nt">&gt;</span>
+                                      Message Center
+                                  <span class="nt">&lt;/h6&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_1.svg"</span>
+                                              <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-success"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"font-weight-bold"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Hi there! I am wondering if you can help me with a
+                                              problem I've been having.<span class="nt">&lt;/div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Emily Fowler · 58m<span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_2.svg"</span>
+                                              <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>I have the photos that you ordered last month, how
+                                              would you like them sent to you?<span class="nt">&lt;/div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Jae Chun · 1d<span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"/resources/img/undraw_profile_3.svg"</span>
+                                              <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-warning"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Last month's report looks great, I am very happy with
+                                              the progress so far, keep up the good work!<span class="nt">&lt;/div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Morgan Alvarez · 2d<span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item d-flex align-items-center"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-list-image mr-3"</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"rounded-circle"</span> <span class="na">src=</span><span class="s">"https://source.unsplash.com/Mv9hjnEUHR4/60x60"</span>
+                                              <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"status-indicator bg-success"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-truncate"</span><span class="nt">&gt;</span>Am I a good boy? The reason I ask is because someone
+                                              told me that people say this to all dogs, even if they aren't good...<span class="nt">&lt;/div&gt;</span>
+                                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"small text-gray-500"</span><span class="nt">&gt;</span>Chicken the Dog · 2w<span class="nt">&lt;/div&gt;</span>
+                                      <span class="nt">&lt;/div&gt;</span>
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item text-center small text-gray-500"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Read More Messages<span class="nt">&lt;/a&gt;</span>
+                              <span class="nt">&lt;/div&gt;</span>
+                          <span class="nt">&lt;/li&gt;</span>
+
+                          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"topbar-divider d-none d-sm-block"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+                          <span class="c">&lt;!-- Nav Item - User Information --&gt;</span>
+                          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item dropdown no-arrow"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link dropdown-toggle"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"userDropdown"</span> <span class="na">role=</span><span class="s">"button"</span>
+                                  <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"mr-2 d-none d-lg-inline text-gray-600 small"</span><span class="nt">&gt;</span>Douglas McGee<span class="nt">&lt;/span&gt;</span>
+                                  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img-profile rounded-circle"</span>
+                                      <span class="na">src=</span><span class="s">"/resources/img/undraw_profile.svg"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;/a&gt;</span>
+                              <span class="c">&lt;!-- Dropdown - User Information --&gt;</span>
+                              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right shadow animated--grow-in"</span>
+                                  <span class="na">aria-labelledby=</span><span class="s">"userDropdown"</span><span class="nt">&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-user fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                      Profile
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                      Settings
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-list fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                      Activity Log
+                                  <span class="nt">&lt;/a&gt;</span>
+                                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown-divider"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">"#logoutModal"</span><span class="nt">&gt;</span>
+                                      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"</span><span class="nt">&gt;&lt;/i&gt;</span>
+                                      Logout
+                                  <span class="nt">&lt;/a&gt;</span>
+                              <span class="nt">&lt;/div&gt;</span>
+                          <span class="nt">&lt;/li&gt;</span>
+
+                      <span class="nt">&lt;/ul&gt;</span>
+
+                  <span class="nt">&lt;/nav&gt;</span>
+                  <span class="c">&lt;!-- End of Topbar --&gt;</span>
+</code></pre>  </div> </div> </li> <li> <p>footer.jsp</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"sticky-footer bg-white"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container my-auto"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"copyright text-center my-auto"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;span&gt;</span>Copyright <span class="ni">&amp;copy;</span> Your Website 2020<span class="nt">&lt;/span&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/footer&gt;</span>
+  
+  <span class="c">&lt;!-- Scroll to Top Button--&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"scroll-to-top rounded"</span> <span class="na">href=</span><span class="s">"#page-top"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-angle-up"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+
+  <span class="c">&lt;!-- Logout Modal--&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade"</span> <span class="na">id=</span><span class="s">"logoutModal"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"exampleModalLabel"</span>
+      <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-dialog"</span> <span class="na">role=</span><span class="s">"document"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-header"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;h5</span> <span class="na">class=</span><span class="s">"modal-title"</span> <span class="na">id=</span><span class="s">"exampleModalLabel"</span><span class="nt">&gt;</span>Ready to Leave?<span class="nt">&lt;/h5&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-dismiss=</span><span class="s">"modal"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>×<span class="nt">&lt;/span&gt;</span>
+                  <span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-body"</span><span class="nt">&gt;</span>Select "Logout" below if you are ready to end your current session.<span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-footer"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-dismiss=</span><span class="s">"modal"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">href=</span><span class="s">"login.html"</span><span class="nt">&gt;</span>Logout<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="c">&lt;!-- Bootstrap core JavaScript--&gt;</span>
+  <span class="c">&lt;!--     &lt;script src="/resources/vendor/jquery/jquery.min.js"&gt;&lt;/script&gt; --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- Core plugin JavaScript--&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/jquery-easing/jquery.easing.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- Custom scripts for all pages--&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/js/sb-admin-2.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- Page level plugins --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/datatables/jquery.dataTables.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/vendor/datatables/dataTables.bootstrap4.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="c">&lt;!-- Page level custom scripts --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/resources/js/demo/datatables-demo.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
+</code></pre>  </div> </div> </li> </ul> <p><strong><font color="green" style="font-size:large;">1-3. jQuery 라이브러리 변경</font></strong></p> <ol> <li>footer.jsp 에 선언된 jquery.min.js 부분을 삭제하고 header.jsp 부분에 jquery.min.js 의 CDN 을 추가한다.</li> </ol> <div class="language-jsp highlighter-rouge notranslate"><div class="highlight">
+<pre class="highlight"><code>	<span class="nt">&lt;script
+		  </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.5.1.min.js"</span>
+		  <span class="na">integrity=</span><span class="s">"sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="</span>
+		  <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/script&gt;</span>
+</code></pre>  </div></div> <h2 id="2-목록화면-처리"><font color="blue">2. 목록화면 처리</font></h2> <ol> <li> <p>list.jsp 에 <code class="language-plaintext highlighter-rouge notranslate">태그 라이브러리</code> 추가</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="na"> prefix=</span><span class="s">"c"</span> <span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="na"> prefix=</span><span class="s">"fmt"</span> <span class="nt">%&gt;</span>
+</code></pre>  </div> </div> </li> <li> <p>controller 에서 전해준 Model에 담긴 데이터를 list.jsp에 출력</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code>  <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="na"> prefix=</span><span class="s">"c"</span> <span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="na"> prefix=</span><span class="s">"fmt"</span> <span class="nt">%&gt;</span>
+
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/header.jsp"</span> <span class="nt">%&gt;</span>
+ <span class="c">&lt;!-- Begin Page Content --&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+     <span class="c">&lt;!-- Page Heading --&gt;</span>
+     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"h3 mb-2 text-gray-800"</span><span class="nt">&gt;</span>Tables<span class="nt">&lt;/h1&gt;</span>
+     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"mb-4"</span><span class="nt">&gt;</span>DataTables is a third party plugin that is used to generate the demo table below.
+         For more information about DataTables, please visit the <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span>
+             <span class="na">href=</span><span class="s">"https://datatables.net"</span><span class="nt">&gt;</span>official DataTables documentation<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+         <span class="c">&lt;!-- DataTales Example --&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card shadow mb-4"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header py-3"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"m-0 font-weight-bold text-primary"</span><span class="nt">&gt;</span>DataTables Example<span class="nt">&lt;/h6&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-body"</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-responsive"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span> <span class="na">id=</span><span class="s">"dataTable"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">cellspacing=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;thead&gt;</span>
+                             <span class="nt">&lt;tr&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>#번호<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>제목<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>작성자<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>작성일<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>수정일<span class="nt">&lt;/th&gt;</span>
+                             <span class="nt">&lt;/tr&gt;</span>
+                         <span class="nt">&lt;/thead&gt;</span>
+                         <span class="nt">&lt;tfoot&gt;</span>
+                             <span class="nt">&lt;tr&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>#번호<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>제목<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>작성자<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>작성일<span class="nt">&lt;/th&gt;</span>
+                                 <span class="nt">&lt;th&gt;</span>수정일<span class="nt">&lt;/th&gt;</span>
+                             <span class="nt">&lt;/tr&gt;</span>
+                         <span class="nt">&lt;/tfoot&gt;</span>
+                         <span class="nt">&lt;tbody&gt;</span>
+                         <span class="nt">&lt;c:forEach </span><span class="na">items=</span><span class="s">"</span><span class="si">${</span><span class="n">list</span><span class="si">}</span><span class="s">"</span><span class="na"> var=</span><span class="s">"board"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;tr&gt;</span>
+                                 <span class="nt">&lt;td&gt;</span>${board.bno}<span class="nt">&lt;/td&gt;</span>
+                                 <span class="nt">&lt;td&gt;</span>${board.title}<span class="nt">&lt;/td&gt;</span>
+                                 <span class="nt">&lt;td&gt;</span>${board.writer}<span class="nt">&lt;/td&gt;</span>
+                                 <span class="nt">&lt;td&gt;&lt;fmt:formatDate </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">regdate</span><span class="si">}</span><span class="s">"</span><span class="na"> pattern=</span><span class="s">"yyyy-mm-dd"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+                                 <span class="nt">&lt;td&gt;&lt;fmt:formatDate </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">updateDate</span><span class="si">}</span><span class="s">"</span><span class="na"> pattern=</span><span class="s">"yyyy-mm-dd"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+                             <span class="nt">&lt;/tr&gt;</span>
+                         <span class="nt">&lt;/c:forEach&gt;</span>
+                         <span class="nt">&lt;/tbody&gt;</span>
+                     <span class="nt">&lt;/table&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/footer.jsp"</span> <span class="nt">%&gt;</span>   
+</code></pre>  </div> </div> </li> </ol> <h2 id="3-등록-입력-페이지-처리"><font color="blue">3. 등록 입력 페이지 처리</font></h2> <ol> <li> <p>BoardController에 get 방식의 register() 를 만든다. (입력화면을 보여주기)</p> <div class="language-java highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/register"</span><span class="o">)</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">register</span><span class="o">()</span> <span class="o">{</span>	
+ <span class="o">}</span>
+</code></pre>  </div> </div> </li> <li> <p>register.jsp 파일을 작성한다.</p> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="na"> prefix=</span><span class="s">"c"</span> <span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="na"> prefix=</span><span class="s">"fmt"</span> <span class="nt">%&gt;</span>
+
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/header.jsp"</span> <span class="nt">%&gt;</span>
+                    
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>Board Register<span class="nt">&lt;/h1&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span><span class="nt">&gt;</span>Board Register<span class="nt">&lt;/div&gt;</span>
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span> <span class="na">action=</span><span class="s">"/board/register"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"title"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Text area<span class="nt">&lt;/label&gt;&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">rows=</span><span class="s">"3"</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Writer<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"writer"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit Button<span class="nt">&lt;/button&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Reset Button<span class="nt">&lt;/button&gt;</span>
+                             <span class="nt">&lt;/form&gt;</span> 
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+                    
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/footer.jsp"</span> <span class="nt">%&gt;</span>   
+</code></pre>  </div> </div> </li> <li>탐캣을 Start 한 후, 웹 브라우저에서 <code class="language-plaintext highlighter-rouge notranslate">http://localhost:8080/board/register</code> 로 접속하여 게시글을 등록해 본다.</li> <li>정상적으로 등록되고 목록 화면으로 이동한다. 반드시 목록화면으로 이동해야 한다. 그렇지 않으면 새로고침 시, 계속적으로 같은 게시물이 도배되게 된다.</li> <li>한글이 깨지는 문제가 발생한다면, webConfig.java 또는 web.xml 에 encoding 필터를 추가한다.</li> <li>게시글 등록 후, list.jsp 화면으로 ‘result' 파라미터를 전달하는데 이 결과를 이용하여 입력결과를 모달로 보여준다. <ul> <li>list.jsp</li> </ul> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="c">&lt;!-- table 태그가 끝난 후, 아래 태그를 삽입한다. --&gt;</span>
+ <span class="c">&lt;!-- The Modal --&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal"</span> <span class="na">id=</span><span class="s">"myModal"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-dialog"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
+ 
+     <span class="c">&lt;!-- Modal body --&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-body"</span><span class="nt">&gt;</span>           
+     <span class="nt">&lt;/div&gt;</span>
+     <span class="c">&lt;!-- Modal footer --&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-footer"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-dismiss=</span><span class="s">"modal"</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/button&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+        
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+ <span class="c">&lt;!-- End Modal --&gt;</span>
+ <span class="c">&lt;!-- 파일 끝에 자바스크립트로 모달 기능을 추가한다. --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+ 	 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+ 		<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">'</span><span class="nt">&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">result</span><span class="si">}</span><span class="s">"</span><span class="nt">/&gt;</span><span class="dl">'</span><span class="p">;</span>
+ 		<span class="nx">checkModel</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+     <span class="kd">function</span> <span class="nx">checkModel</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+         <span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+             <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#myModal .modal-body</span><span class="dl">"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">게시글 1건이 등록되었습니다.</span><span class="dl">"</span><span class="p">);</span>
+             <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#myModal</span><span class="dl">"</span><span class="p">).</span><span class="nx">modal</span><span class="p">();</span>
+ 		    <span class="p">}</span>
+     <span class="p">}</span>
+ 	<span class="p">});</span>
+ <span class="nt">&lt;/script&gt;</span>
+</code></pre>  </div> </div> </li> <li>list.jsp 의 테이블 위에 ‘등록' 버튼을 추가한다. <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header py-3"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;h6</span> <span class="na">class=</span><span class="s">"m-0 font-weight-bold text-primary"</span><span class="nt">&gt;</span>Board Table<span class="nt">&lt;/h6&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid border mt-3 pr-3 d-flex justify-content-between"</span><span class="nt">&gt;</span>Board List Page
+         <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">'regBtn'</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-sm "</span><span class="nt">&gt;</span>Register New Board<span class="nt">&lt;/button&gt;</span> 
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+ <span class="c">&lt;!-- javascript에 추가 --&gt;</span>
+ $("#regBtn").on("click", function(){
+     self.location = "/board/register";
+ });
+</code></pre>  </div> </div> </li> </ol> <h2 id="4-조회-페이지-처리"><font color="blue">4. 조회 페이지 처리</font></h2> <ol> <li>list.jsp에서 bno input 요소에 <code class="language-plaintext highlighter-rouge notranslate">/board/get?bno=2</code> 식의 onclick 이벤트를 추가 한다. <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;tbody&gt;</span>
+     <span class="nt">&lt;c:forEach </span><span class="na">items=</span><span class="s">"</span><span class="si">${</span><span class="n">list</span><span class="si">}</span><span class="s">"</span><span class="na"> var=</span><span class="s">"board"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;tr&gt;</span>
+         <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/board/get?bno=${board.bno}"</span> <span class="na">value=</span><span class="s">"${board.bno}"</span><span class="nt">&gt;</span>${board.bno}<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+         <span class="nt">&lt;td&gt;</span>${board.title}<span class="nt">&lt;/td&gt;</span>
+         <span class="nt">&lt;td&gt;</span>${board.writer}<span class="nt">&lt;/td&gt;</span>
+         <span class="nt">&lt;td&gt;&lt;fmt:formatDate </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">regdate</span><span class="si">}</span><span class="s">"</span><span class="na"> pattern=</span><span class="s">"yyyy-mm-dd"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+         <span class="nt">&lt;td&gt;&lt;fmt:formatDate </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">updateDate</span><span class="si">}</span><span class="s">"</span><span class="na"> pattern=</span><span class="s">"yyyy-mm-dd"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+     <span class="nt">&lt;/c:forEach&gt;</span>
+ <span class="nt">&lt;/tbody&gt;</span>
+</code></pre>  </div> </div> </li> <li>register.jsp 를 복사해 수정해서, get.jsp 페이지를 작성한다.(read-only 처리, 버튼 추가) <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="na"> prefix=</span><span class="s">"c"</span> <span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="na"> prefix=</span><span class="s">"fmt"</span> <span class="nt">%&gt;</span>
+
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/header.jsp"</span> <span class="nt">%&gt;</span>
+                    
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>Board Read Page<span class="nt">&lt;/h1&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+                
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>#Bno<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"bno"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"${board.bno}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"${board.title}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Text area<span class="nt">&lt;/label&gt;&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">rows=</span><span class="s">"3"</span> <span class="na">name=</span><span class="s">"content"</span> <span class="na">readonly=</span><span class="s">"readonly"</span><span class="nt">&gt;&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">content</span><span class="si">}</span><span class="s">"</span> <span class="nt">/&gt;&lt;/textarea&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Writer<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"writer"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"${board.writer}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">data-oper=</span><span class="s">'modify'</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Modify<span class="nt">&lt;/button&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">data-oper=</span><span class="s">'list'</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>List<span class="nt">&lt;/button&gt;</span>
+                                 <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">'/board/modify'</span> <span class="na">method=</span><span class="s">'get'</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'hidden'</span> <span class="na">name=</span><span class="s">'bno'</span> <span class="na">value=</span><span class="s">'${board.bno}'</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/form&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span><span class="nt">&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            
+         <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+             <span class="kd">const</span> <span class="nx">oper</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">oper</span><span class="dl">'</span><span class="p">);</span>
+             <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">);</span>
+             <span class="nx">alert</span><span class="p">(</span><span class="nx">oper</span><span class="p">);</span>
+             <span class="k">if</span><span class="p">(</span><span class="nx">oper</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">){</span>
+                 <span class="nx">form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">action</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/board/list</span><span class="dl">'</span><span class="p">);</span>
+                 <span class="nx">form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">input</span><span class="dl">'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+             <span class="p">}</span>
+             <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+         <span class="p">})</span>
+     <span class="p">})</span>
+ <span class="nt">&lt;/script&gt;</span>
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/footer.jsp"</span> <span class="nt">%&gt;</span>   
+</code></pre>  </div> </div> </li> <li>등록 -&gt; 목록 -&gt; 조회 -&gt; ‘뒤로가기' 시, 목록 페이지에 모달창 보이는 문제 해결하기 <ul> <li>등록 후 목록으로 이동 시 모달창이 발생하고 나면, history 를 초기화 한다.</li> <li>모달 창을 띄울 때, history가 있을 경우만 모달창이 뜨도록 체크하는 로직을 넣는다.(result 값이 없거나, history가 없으면 모달창은 뜨지 않아야 한다.)</li> <li>list.jsp 자바스크립트 수정</li> </ul> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+         <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="dl">'</span><span class="nt">&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">result</span><span class="si">}</span><span class="s">"</span><span class="nt">/&gt;</span><span class="dl">'</span><span class="p">;</span>
+         <span class="nx">checkModel</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+         <span class="nx">history</span><span class="p">.</span><span class="nx">replaceState</span><span class="p">({},</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+            
+         <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#regBtn</span><span class="dl">"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+             <span class="nb">self</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/board/register</span><span class="dl">"</span><span class="p">;</span>
+         <span class="p">});</span>
+            
+         <span class="kd">function</span> <span class="nx">checkModel</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+
+             <span class="k">if</span><span class="p">(</span><span class="nx">result</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">history</span><span class="p">.</span><span class="nx">state</span><span class="p">){</span>
+                 <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#myModal .modal-body</span><span class="dl">"</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="dl">"</span><span class="s2">게시글 1건이 등록되었습니다.</span><span class="dl">"</span><span class="p">);</span>
+                 <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#myModal</span><span class="dl">"</span><span class="p">).</span><span class="nx">modal</span><span class="p">();</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+     <span class="p">});</span>
+ <span class="nt">&lt;/script&gt;</span>
+</code></pre>  </div> </div> </li> </ol> <h2 id="5-게시글-수정삭제-처리"><font color="blue">5. 게시글 수정/삭제 처리</font></h2> <ol> <li>수정화면을 불러오는 controller 를 작성한다. (BoardController.java) <div class="language-java highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/modify"</span><span class="o">)</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modify</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"bno"</span><span class="o">)</span> <span class="kt">long</span> <span class="n">bno</span><span class="o">,</span> <span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"board"</span><span class="o">,</span> <span class="n">service</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">bno</span><span class="o">));</span>
+ <span class="o">}</span>
+</code></pre>  </div> </div> </li> <li>get.jsp 페이지를 복사해와 modify.jsp 페이지를 작성한다. <ul> <li>수정가능한 title, content 필드는 readOnly 속성을 삭제한다.</li> <li>날짜 관련 포맷은 ‘yyyy/mm/dd' 로 통일한다.</li> <li>수정, 삭제, 목록 버튼을 추가하고 버튼 기능에 맞게 페이지 이동하도록 로직을 추가한다.</li> <li>modify.jsp</li> </ul> <div class="language-jsp highlighter-rouge notranslate">
+<div class="highlight">
+<pre class="highlight"><code> <span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="na"> prefix=</span><span class="s">"c"</span> <span class="nt">%&gt;</span>
+ <span class="nt">&lt;%@ taglib </span><span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="na"> prefix=</span><span class="s">"fmt"</span> <span class="nt">%&gt;</span>
+
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/header.jsp"</span> <span class="nt">%&gt;</span>
+                    
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>Board Read Page<span class="nt">&lt;/h1&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+
+                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+                
+                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+                             <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">'/board/modify'</span> <span class="na">method=</span><span class="s">'post'</span><span class="nt">&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>#Bno<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"bno"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"${board.bno}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"${board.title}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Text area<span class="nt">&lt;/label&gt;&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">rows=</span><span class="s">"3"</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">content</span><span class="si">}</span><span class="s">"</span> <span class="nt">/&gt;&lt;/textarea&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Writer<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"writer"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"${board.writer}"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Writer<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"regdate"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"</span><span class="nt">&lt;fmt:formatDate </span><span class="na">pattern = </span><span class="s">'yyyy/mm/dd'</span><span class="na"> value=</span><span class="s">'</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">regdate</span><span class="si">}</span><span class="s">'</span><span class="nt">/&gt;</span><span class="s">"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+                                     <span class="nt">&lt;label&gt;</span>Writer<span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"updateDate"</span> <span class="na">readonly=</span><span class="s">"readonly"</span> <span class="na">value=</span><span class="s">"</span><span class="nt">&lt;fmt:formatDate </span><span class="na">pattern = </span><span class="s">'yyyy/mm/dd'</span><span class="na"> value=</span><span class="s">'</span><span class="si">${</span><span class="n">board</span><span class="o">.</span><span class="na">updateDate</span><span class="si">}</span><span class="s">'</span><span class="nt">/&gt;</span><span class="s">"</span><span class="nt">/&gt;</span>
+                                 <span class="nt">&lt;/div&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">data-oper=</span><span class="s">'modify'</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>Modify<span class="nt">&lt;/button&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">data-oper=</span><span class="s">'remove'</span> <span class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/button&gt;</span>
+                                 <span class="nt">&lt;button</span> <span class="na">data-oper=</span><span class="s">'list'</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">onclick=</span><span class="s">"location.href='/board/list'"</span><span class="nt">&gt;</span>List<span class="nt">&lt;/button&gt;</span>
+                             <span class="nt">&lt;/form&gt;</span>
+                         <span class="nt">&lt;/div&gt;</span>
+                     <span class="nt">&lt;/div&gt;</span>
+                 <span class="nt">&lt;/div&gt;</span>
+             <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+ <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+     <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+         <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            
+         <span class="kd">const</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">form</span><span class="dl">'</span><span class="p">);</span>
+         <span class="kd">const</span> <span class="nx">oper</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">oper</span><span class="dl">'</span><span class="p">);</span>
+            
+         <span class="k">switch</span><span class="p">(</span><span class="nx">oper</span><span class="p">){</span>
+         <span class="k">case</span> <span class="dl">'</span><span class="s1">list</span><span class="dl">'</span><span class="p">:</span>
+             <span class="nx">form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">action</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/board/list</span><span class="dl">'</span><span class="p">);</span>
+             <span class="nx">form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">method</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">);</span>
+             <span class="nx">form</span><span class="p">.</span><span class="nx">empty</span><span class="p">();</span>
+             <span class="k">break</span><span class="p">;</span>
+         <span class="k">case</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">:</span>
+             <span class="nx">form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">action</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/board/remove</span><span class="dl">'</span><span class="p">);</span>
+             <span class="k">break</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nx">form</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+     <span class="p">})</span>
+ <span class="p">});</span> 
+ <span class="nt">&lt;%@include </span><span class="na">file=</span><span class="s">"../includes/footer.jsp"</span> <span class="nt">%&gt;</span>   
+</code></pre>  </div> </div> </li> </ol> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/spring5/3_webDev/6_presentation.html" class="btn" title="프레젠테이션 계층(Controller) 구현" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"><a href="/spring5/3_webDev/8_paging.html" class="btn" title="페이징 처리" accesskey="n" rel="next"> Next <i class="fa fa-arrow-circle-right"></i> </a></div> </div>
+<hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2020-2021,</span> <a class="text-gray" href="https://github.com/82iirriiss" rel="noreferrer" target="_blank">82iirriiss</a> Revision <a class="text-gray" href="https://github.com/82iirriiss/82iirriiss.github.io/commit/8127b0c003fdc0bf773688d88b2bd32c76ae6c20" title="8127b0c003fdc0bf773688d88b2bd32c76ae6c20" rel="noreferrer" target="_blank">8127b0c</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> 윤미의 개발 블로그 </div> <div class="branch p-1"> <span class="name"> gh-pages </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io" title="Stars: 0"> <i class="fa fa-github"></i> Homepage </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/issues" title="Open issues: 0"> <i class="fa fa-question-circle-o"></i> Issues </a> </dd> <dd> <a href="https://github.com/82iirriiss/82iirriiss.github.io/zipball/gh-pages" title="Size: 8449 Kb"> <i class="fa fa-download"></i> Download </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/" title="윤미의 개발 블로그">Software</a> is under the terms of <a href="https://github.com/82iirriiss/82iirriiss.github.io">MIT License</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>

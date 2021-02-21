@@ -313,7 +313,11 @@ sort: 2
 - 일회성으로 데이터를 전달하는 용도.
 
 ```java
-// Todo.
+	@PostMapping("/register")
+	public String register(BoardVO vo, RedirectAttributes rttr) {
+		service.register(vo);
+		rttr.addFlashAttribute("result", "success");
+		return "redirect:/board/list";
 ```
 
 ## <font color='blue'>5. Controller의 반환 타입 - DTO, void, string, ResponseEntity, Model</font>
