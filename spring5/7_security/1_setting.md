@@ -6,8 +6,8 @@ sort : 1
 - 스프링 시큐리티는, 서브릿의 필터와 인터셉터를 이용하여 처리
 - 필터 : 스프링과 무관한 서블릿 자원
 - 인터셉터 : 스프링의 빈으로 관리되는 스프링 컨텍스트에 속함, 스프링 내부 컨트롤러 호출 마다 관여
-## <font color='blue'>1. pom.xml</font>
-- 의존성 추가 
+
+## <font color='blue'>1. pom.xml 의존성 추가하기</font>
 
 ```xml
     <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
@@ -36,7 +36,7 @@ sort : 1
     </dependency>
 ```
 
-## <font color='blue'>2. security-context.xml</font>
+## <font color='blue'>2. security-context.xml 파일 추가</font>
 - /WEB-INF/spring 하위에 `security-context.xml` 추가
 - file > new > 'Spring Bean Configuration File' 로 생성
 - security-context.xml 의 네임스페이스 추가 
@@ -62,7 +62,7 @@ sort : 1
 
 </beans>
 ```
-## <font color='blue'>3. web.xml</font>
+## <font color='blue'>3. web.xml에 security-context 로딩 설정</font>
 - 시큐리티 필터 빈을 재대로 이용하기 위해 스프링 설정 파일을 로딩하도록 설정
 - 필터를 이용해서 시큐리티가 스프링 동작에 관여하도록 설정
 
